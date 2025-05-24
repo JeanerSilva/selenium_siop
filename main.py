@@ -4,19 +4,33 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from siop_utils import preencher_input_por_id, preenche_seletor_por_id, clicar_botao, preenche_seletor_por_spath
+import subprocess
+from siop_utils import preencher_input_por_id, preenche_seletor_por_id, clicar_botao, preenche_seletor_por_spath, aguardar_login_manual
 
 def iniciar_driver():
+ # Finaliza instâncias anteriores do Edge
+    try:
+        subprocess.run([
+            "powershell", "-Command",
+            "Stop-Process -Name 'msedge' -Force -ErrorAction SilentlyContinue"
+        ], check=True)
+        print("🧹 Edge encerrado com sucesso antes da execução.")
+    except subprocess.CalledProcessError:
+        print("⚠️ Não foi possível encerrar processos do Edge ou nenhum processo estava ativo.")
+
     edge_options = Options()
     edge_options.add_argument(r'--user-data-dir=C:\\Users\\1765 IRON\\AppData\\Local\\Microsoft\\Edge\\User Data')
     edge_options.add_argument('--profile-directory=Profile 1')
     edge_options.add_argument('--start-maximized')
     return webdriver.Edge(options=edge_options)
+    
 
 def main():
     driver = iniciar_driver()
     wait = WebDriverWait(driver, 10)
     driver.get("https://www.siop.planejamento.gov.br/modulo/main/index.html#/150")
+
+    aguardar_login_manual(wait)
 
     preenche_seletor_por_spath(driver, wait, "Exercício", '//label[contains(text(), "Exercício")]/following-sibling::div/select', "2025")
     preenche_seletor_por_spath(driver, wait, "Perfil", '//label[contains(text(), "Perfil")]/following-sibling::div/select', "SEPLAN")

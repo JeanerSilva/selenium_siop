@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import time
 
 def preencher_input_por_id(driver, wait, descricao, element_id, texto):
@@ -87,3 +88,22 @@ def preenche_seletor_por_spath(driver, wait, descricao, xpath, texto_visivel, te
         with open(f"erro_{descricao.lower().replace(' ', '_')}.html", "w", encoding="utf-8") as f:
             f.write(driver.page_source)
         raise
+
+def aguardar_login_manual(wait, timeout=1200):
+    try:
+        print("🕵️ Verificando se é necessário login manual...")
+        botao_login = wait.until(
+            EC.presence_of_element_located((By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]')),
+            message="Botão de login gov.br não encontrado"
+        )
+        if botao_login.is_displayed():
+            print(f"🔒 Login não detectado. Aguardando até {timeout} segundos para que o usuário entre com gov.br...")
+            wait.until(
+                #EC.presence_of_element_located((By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]'))
+                EC.presence_of_element_located((By.XPATH, '//a[contains(@href, "#/meucadastro")]'))
+            )
+            print("✅ Login manual aparentemente concluído.")
+    except TimeoutException:
+        print("⚠️ Tempo limite para login manual atingido.")
+    except NoSuchElementException:
+        print("✅ Usuário já logado (botão de login não encontrado).")
