@@ -1,8 +1,0 @@
-/**
- *
- *Define a estrutura e formas geral do módulo qualitativo 
- *Alguns itens do Icefaces são sobrescritos  
- * */
-@import "_layout-quantitativo.css";
-@import "quantitativo/consulta.css";
-@import "quantitativo/fonteamento.css";

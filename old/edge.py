@@ -95,13 +95,6 @@ iframes = driver.find_elements(By.TAG_NAME, "iframe")
 driver.switch_to.frame(iframes[0])  # ou [1], [2], etc.
 # pra voltar pro dom principal driver.switch_to.default_content()
 
-
-# Agora pode acessar seu input
-#wait.until(
-#    EC.visibility_of_element_located((By.ID, "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:txtPesquisaObjetivoCodigo"))
-#).send_keys("1234")
-
-
 print("✅ Container principal carregado.")
 
 # Preenche os campos de filtro
