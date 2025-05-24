@@ -6,7 +6,22 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
 import time
 
-def selecionar_por_texto_visivel(driver, wait, descricao, element_id, texto_visivel, tentativas=2, delay=1):
+def preencher_input_por_id(driver, wait, descricao, element_id, texto):
+    try:
+        print(f"🕓 Aguardando campo '{descricao}'...")
+        input_element = wait.until(EC.visibility_of_element_located((By.ID, element_id)))
+        input_element.clear()
+        input_element.send_keys(texto)
+        print(f"✅ Campo '{descricao}' preenchido com '{texto}'.")
+    except TimeoutException:
+        print(f"❌ Timeout ao localizar o campo '{descricao}' com id='{element_id}'")
+        driver.save_screenshot(f"erro_{descricao.lower().replace(' ', '_')}.png")
+        with open(f"erro_{descricao.lower().replace(' ', '_')}.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+        raise
+
+
+def preenche_seletor_por_id(driver, wait, descricao, element_id, texto_visivel, tentativas=2, delay=1):
     try:
         print(f"🕓 Aguardando campo '{descricao}'...")
         wait.until(EC.visibility_of_element_located((By.ID, element_id)))
@@ -31,7 +46,7 @@ def selecionar_por_texto_visivel(driver, wait, descricao, element_id, texto_visi
         raise
 
 
-def selecionar_por_texto_visivel_xpath(driver, wait, descricao, xpath, texto_visivel, tentativas=2, delay=1):
+def preenche_seletor_por_spath(driver, wait, descricao, xpath, texto_visivel, tentativas=2, delay=1):
     try:
         print(f"🕓 Aguardando campo '{descricao}'...")
         wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
@@ -67,11 +82,9 @@ wait = WebDriverWait(driver, 10)
 
 # Abre o SIOP
 driver.get("https://www.siop.planejamento.gov.br/modulo/main/index.html#/150")
-time.sleep(5)
 
-
-selecionar_por_texto_visivel_xpath(driver, wait, "Exercício", '//label[contains(text(), "Exercício")]/following-sibling::div/select', "2025")
-selecionar_por_texto_visivel_xpath(driver, wait, "Perfil", '//label[contains(text(), "Perfil")]/following-sibling::div/select', "SEPLAN")
+preenche_seletor_por_spath(driver, wait, "Exercício", '//label[contains(text(), "Exercício")]/following-sibling::div/select', "2025")
+preenche_seletor_por_spath(driver, wait, "Perfil", '//label[contains(text(), "Perfil")]/following-sibling::div/select', "SEPLAN")
 
 # Espera o iframe aparecer
 wait.until(EC.presence_of_element_located((By.TAG_NAME, "iframe")))
@@ -93,49 +106,55 @@ print("✅ Container principal carregado.")
 
 # Preenche os campos de filtro
 
-selecionar_por_texto_visivel(
+preencher_input_por_id(driver, wait,
+    descricao="Objetivo Específico",
+    element_id="form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:txtPesquisaObjetivoCodigo",
+    texto="1234"
+)
+
+preenche_seletor_por_id(
     driver, wait, "Programa",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoPrograma",
     "1144 - Agropecuária Sustentável"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Órgão",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoOrgao",
     "22000 - Ministério da Agricultura e Pecuária"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Origem",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoTipoInclusao",
     "PPA"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Momento",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoMomento",
     "Base de Partida"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Alterado",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoAlterado",
     "Alterado"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Excluído",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoExcluido",
     "Não Excluído"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Novo",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoNovo",
     "Novo"
 )
 
-selecionar_por_texto_visivel(
+preenche_seletor_por_id(
     driver, wait, "Validado",
     "form:subTelaPesquisa:subTelaPesquisaObjetivoEspecifico:cmbPesquisaObjetivoValidado",
     "Validado"
@@ -157,5 +176,5 @@ except TimeoutException:
     driver.save_screenshot("erro_botao_procurar.png")
 
 # Aguarda resultados aparecerem (opcional)
-time.sleep(5)
+time.sleep(20)
 driver.quit()
