@@ -1,0 +1,862 @@
+<html lang="pt"><head><meta charset="utf-8"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="static/img/siop_fav_icon.png" rel="shortcut icon"><title id="document:title">SIOP - Sistema Integrado de Planejamento e Orçamento do Governo Federal</title><script defer="defer" src="/modulo/main/chunk-vendors-e3949411457f47a7.js"></script><script defer="defer" src="/modulo/main/app-e3949411457f47a7.js"></script><link href="/modulo/main/static/css/chunk-vendors.dcbaf684.css" rel="stylesheet"><link href="/modulo/main/static/css/app.91162707.css" rel="stylesheet"><style type="text/css">.toasted{padding:0 20px}.toasted.rounded{border-radius:24px}.toasted .primary,.toasted.toasted-primary{border-radius:2px;min-height:38px;line-height:1.1em;background-color:#353535;padding:6px 20px;font-size:15px;font-weight:300;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}.toasted .primary.success,.toasted.toasted-primary.success{background:#4caf50}.toasted .primary.error,.toasted.toasted-primary.error{background:#f44336}.toasted .primary.info,.toasted.toasted-primary.info{background:#3f51b5}.toasted .primary .action,.toasted.toasted-primary .action{color:#a1c2fa}.toasted.bubble{border-radius:30px;min-height:38px;line-height:1.1em;background-color:#ff7043;padding:0 20px;font-size:15px;font-weight:300;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}.toasted.bubble.success{background:#4caf50}.toasted.bubble.error{background:#f44336}.toasted.bubble.info{background:#3f51b5}.toasted.bubble .action{color:#8e2b0c}.toasted.outline{border-radius:30px;min-height:38px;line-height:1.1em;background-color:#fff;border:1px solid #676767;padding:0 20px;font-size:15px;color:#676767;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);font-weight:700}.toasted.outline.success{color:#4caf50;border-color:#4caf50}.toasted.outline.error{color:#f44336;border-color:#f44336}.toasted.outline.info{color:#3f51b5;border-color:#3f51b5}.toasted.outline .action{color:#607d8b}.toasted-container{position:fixed;z-index:10000}.toasted-container,.toasted-container.full-width{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.toasted-container.full-width{max-width:86%;width:100%}.toasted-container.full-width.fit-to-screen{min-width:100%}.toasted-container.full-width.fit-to-screen .toasted:first-child{margin-top:0}.toasted-container.full-width.fit-to-screen.top-right{top:0;right:0}.toasted-container.full-width.fit-to-screen.top-left{top:0;left:0}.toasted-container.full-width.fit-to-screen.top-center{top:0;left:0;-webkit-transform:translateX(0);transform:translateX(0)}.toasted-container.full-width.fit-to-screen.bottom-right{right:0;bottom:0}.toasted-container.full-width.fit-to-screen.bottom-left{left:0;bottom:0}.toasted-container.full-width.fit-to-screen.bottom-center{left:0;bottom:0;-webkit-transform:translateX(0);transform:translateX(0)}.toasted-container.top-right{top:10%;right:7%}.toasted-container.top-left{top:10%;left:7%}.toasted-container.top-center{top:10%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.toasted-container.bottom-right{right:5%;bottom:7%}.toasted-container.bottom-left{left:5%;bottom:7%}.toasted-container.bottom-center{left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);bottom:7%}.toasted-container.bottom-left .toasted,.toasted-container.top-left .toasted{float:left}.toasted-container.bottom-right .toasted,.toasted-container.top-right .toasted{float:right}.toasted-container .toasted{top:35px;width:auto;clear:both;margin-top:10px;position:relative;max-width:100%;height:auto;word-break:normal;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;box-sizing:inherit}.toasted-container .toasted .fa,.toasted-container .toasted .fab,.toasted-container .toasted .far,.toasted-container .toasted .fas,.toasted-container .toasted .material-icons,.toasted-container .toasted .mdi{margin-right:.5rem;margin-left:-.4rem}.toasted-container .toasted .fa.after,.toasted-container .toasted .fab.after,.toasted-container .toasted .far.after,.toasted-container .toasted .fas.after,.toasted-container .toasted .material-icons.after,.toasted-container .toasted .mdi.after{margin-left:.5rem;margin-right:-.4rem}.toasted-container .toasted .action{text-decoration:none;font-size:.8rem;padding:8px;margin:5px -7px 5px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:.03em;font-weight:600;cursor:pointer}.toasted-container .toasted .action.icon{padding:4px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.toasted-container .toasted .action.icon .fa,.toasted-container .toasted .action.icon .material-icons,.toasted-container .toasted .action.icon .mdi{margin-right:0;margin-left:4px}.toasted-container .toasted .action.icon:hover{text-decoration:none}.toasted-container .toasted .action:hover{text-decoration:underline}@media only screen and (max-width:600px){.toasted-container{min-width:100%}.toasted-container .toasted:first-child{margin-top:0}.toasted-container.top-right{top:0;right:0}.toasted-container.top-left{top:0;left:0}.toasted-container.top-center{top:0;left:0;-webkit-transform:translateX(0);transform:translateX(0)}.toasted-container.bottom-right{right:0;bottom:0}.toasted-container.bottom-left{left:0;bottom:0}.toasted-container.bottom-center{left:0;bottom:0;-webkit-transform:translateX(0);transform:translateX(0)}.toasted-container.bottom-center,.toasted-container.top-center{-ms-flex-align:stretch!important;align-items:stretch!important}.toasted-container.bottom-left .toasted,.toasted-container.bottom-right .toasted,.toasted-container.top-left .toasted,.toasted-container.top-right .toasted{float:none}.toasted-container .toasted{border-radius:0}}</style></head><body><noscript><strong>We're sorry but siop-main-ui doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div data-v-e98654ca="" id="app" class="container-fluid"><header data-v-e98654ca=""><div data-v-77a91ad8="" data-v-e98654ca="" class="row mx-0"><!----> <div data-v-77a91ad8="" class="siop_cabecalho col-sm-12 p-0 d-flex flex-wrap rounded-bottom"><div data-v-77a91ad8="" class="siop_cabecalho_componente ml-3 d-flex align-items-center"><a data-v-77a91ad8="" href="#/" class="router-link-active"><div data-v-77a91ad8="" alt="Sistema Integrado de Planejamento e Orçamento - SIOP" title="Sistema Integrado de Planejamento e Orçamento - SIOP" class="icon-header icon-header-icon_siop"></div></a> <a data-v-77a91ad8="" href="#/meucadastro" class="pl-3"><i data-v-77a91ad8="" class="bi bi-person-square fa-lg"></i> Jeaner Luis de Paula Silva</a></div> <!----> <div data-v-77a91ad8="" class="siop_cabecalho_componente ml-auto mr-3"><ul data-v-77a91ad8="" class="navbar-nav flex-row align-items-center"><li data-v-77a91ad8="" class="nav-item mx-2"><a data-v-77a91ad8="" href="#" class="nav-link p-0"><div data-v-77a91ad8="" class="d-inline"><div class="dropdown"><div aria-expanded="false"><i class="fa fa-bell-o"></i> <!----> <span style="display: none;">Notificações</span></div> <div class="dropdown-menu dropdown-menu-md-right p-0 position-absolute" style="z-index: 1090; min-width: 300px;"><div class="dropdown-item-text py-3"><strong>Notificações</strong> <h5 class="float-right m-0 mt-n1"><span title="notificações não lidas" class="badge badge-primary"><i class="fa fa-eye-slash"></i> 0</span> <span title="total de notificações" class="badge badge-primary"><i class="fa fa-bell-o"></i> 0</span></h5></div> <div class="dropdown-divider p-0 m-0" style="display: none;"></div> <button class="dropdown-item p-0 m-0"><ul class="list-group list-group-flush m-0" style="max-width: 300px; max-height: 410px; overflow-y: auto;"></ul></button> <div class="dropdown-item p-0 m-0"><!----></div></div></div> <div class="" style="color: black;"><div tabindex="-1" class="modal fade"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><span></span></div> <div class="modal-body"><div class="text-body"><p></p> <!----></div></div> <div class="modal-footer"><button class="btn btn-primary">Fechar</button></div></div></div></div></div></div></a></li> <li data-v-77a91ad8="" class="nav-item mx-2"><a data-v-77a91ad8="" href="https://www.siop.gov.br/atendimento/" target="_blank" class="nav-link p-0"><i data-v-77a91ad8="" class="bi bi-globe"></i> <span data-v-77a91ad8="" style="display: none;"></span></a></li> <li data-v-77a91ad8="" class="nav-item mx-2"><a data-v-77a91ad8="" href="#/search" class="nav-link p-0"><i data-v-77a91ad8="" class="fa fa-search"></i> <span data-v-77a91ad8="" style="display: none;"></span></a></li> <!----> <li data-v-77a91ad8="" class="nav-item ml-2"><i data-v-77a91ad8="" class="fas fa-sign-out-alt"></i> <a data-v-77a91ad8="" href="#">Sair</a></li></ul></div></div></div> <div data-v-8d5c824a="" data-v-e98654ca="" id="menu" class="row"><nav data-v-8d5c824a="" id="menuSIOP" class="navbar navbar-light navbar-light-siop navbar-expand-md w-100 rounded"><a data-v-8d5c824a="" href="#/" class="navbar-brand p-0 ml-2 text-body router-link-active"><i data-v-8d5c824a="" class="fa fa-home"></i></a> <button data-v-8d5c824a="" type="button" aria-controls="navbar" aria-expanded="false" aria-label="Expande/Encolhe Menu" class="navbar-toggler"><span data-v-8d5c824a="" class="navbar-toggler-icon"></span></button> <div data-v-8d5c824a="" id="navbar" class="collapse navbar-collapse"><ul data-v-8d5c824a="" class="navbar-nav flex-wrap"><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              BI
+            </a> <div data-v-8d5c824a="" id="900" class="dropdown-menu columns px-3" style="min-width: 220px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Extração de Dados</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100257" class="text-wrap">Extrator</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/911" class="text-wrap">Status das Cargas</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/915" class="text-wrap">Relatórios</a></div></div></div></li><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              PPA
+            </a> <div data-v-8d5c824a="" id="205" class="dropdown-menu columns px-3" style="min-width: 440px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Qualitativo</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/516" class="text-wrap">Agenda</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1070" class="text-wrap">Programa</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1072" class="text-wrap">Objetivo</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100291" class="text-wrap">Objetivo Geral</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/150" aria-current="page" class="text-wrap router-link-exact-active router-link-active">Objetivo Específico</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100308" class="text-wrap">Indicador da Entrega</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100309" class="text-wrap">Indicador do Objetivo Específico</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100310" class="text-wrap">Indicador do Programa</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100311" class="text-wrap">Indicador da Meta do Objetivo</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1073" class="text-wrap">Meta do Objetivo</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100306" class="text-wrap">Meta do Objetivo Específico</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100307" class="text-wrap">Meta da Entrega</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1076" class="text-wrap">Medida Institucional Normativa</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/10169" class="text-wrap">Resultado Intermediário</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100164" class="text-wrap">Investimento Plurianual</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/100292" class="text-wrap">Entrega</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/933" class="text-wrap">Ação Não Orçamentária</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1074" class="text-wrap">Iniciativa</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1075" class="text-wrap">Financiamento Extra-orçamentário</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1101" class="text-wrap">Localizador de Ação Não-Orçamentária</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/208" class="text-wrap">Relatórios</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1100" class="text-wrap">Importação de Planilha</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1063" class="text-wrap">Revisão</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Limites Plurianual</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/210" class="text-wrap">Consulta</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/211" class="text-wrap">Histórico</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/212" class="text-wrap">Relatórios</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/213" class="text-wrap">Captação x Limites</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Quantitativo</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/381" class="text-wrap">Propostas Plurianual</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/313" class="text-wrap">Relatórios</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/218" class="text-wrap">Envio</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/220" class="text-wrap">Retorno</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/219" class="text-wrap">Captura</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/10046" class="text-wrap">Janela de trabalho PPA</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Formalização</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/222" class="text-wrap">PPA - Anexos</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/753" class="text-wrap">PPA - Revisão</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/2551" class="text-wrap">Valores globais</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Monitoramento</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/517" class="text-wrap">Monitoramento</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1038" class="text-wrap">Balanço</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/755" class="text-wrap">Avaliação</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/10174" class="text-wrap">Importação de planilha</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/358" class="text-wrap">Relatórios</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Tabelas de Apoio</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/846" class="text-wrap">Diretriz/Macrodesafio</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/848" class="text-wrap">Eixo</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/883" class="text-wrap">Objetivo Estratégico</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/931" class="text-wrap">Tema</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1570" class="text-wrap">Ação Indicativa - PRD</a></div></div></div></li><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              LOA
+            </a> <div data-v-8d5c824a="" id="223" class="dropdown-menu columns px-3" style="min-width: 440px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Qualitativo</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1077" class="text-wrap">Ação</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1078" class="text-wrap">Localizador</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/1079" class="text-wrap">Plano Orçamentário</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/226" class="text-wrap">Relatórios</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Quantitativo</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/10082" class="text-wrap">Propostas</a></div></div><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Formalização</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/244" class="text-wrap">Volume I</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/245" class="text-wrap">Volume II</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/246" class="text-wrap">Volume III</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/247" class="text-wrap">Volume IV</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/248" class="text-wrap">Volume V</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/249" class="text-wrap">Volume VI</a></div></div></div></li><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              Alterações Orçamentárias
+            </a> <div data-v-8d5c824a="" id="283" class="dropdown-menu columns px-3" style="min-width: 220px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Relatórios</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/290" class="text-wrap">Relatórios</a></div></div></div></li><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              Acompanhamento Orçamentário
+            </a> <div data-v-8d5c824a="" id="10193" class="dropdown-menu columns px-3" style="min-width: 220px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Acompanhamento Físico-Financeiro do Orçamento</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/603" class="text-wrap">Captação</a></div></div></div></li><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              Classificações
+            </a> <div data-v-8d5c824a="" id="311" class="dropdown-menu columns px-3" style="min-width: 220px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Classificações</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/834" class="text-wrap">Esfera</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/827" class="text-wrap">Função</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/829" class="text-wrap">Subfunção</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/893" class="text-wrap">Tipo de Programa</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/836" class="text-wrap">Tipo de Ação</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/838" class="text-wrap">Subtipo de ação</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/831" class="text-wrap">Localizador Padronizado</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/897" class="text-wrap">Unidade de Medida de Indicador</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/865" class="text-wrap">Tipo de Financiamento Extra-orçamentário</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/867" class="text-wrap">Fonte de Financiamento</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/869" class="text-wrap">Fonte de Recursos do Financiamento</a></div></div></div></li><li data-v-8d5c824a="" class="nav-item dropdown mx-2"><a data-v-8d5c824a="" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-body">
+              Gestão do Sistema
+            </a> <div data-v-8d5c824a="" id="316" class="dropdown-menu columns px-3" style="min-width: 220px;"><div data-v-8d5c824a="" class="submenu"><div data-v-8d5c824a="" class="dropdown-header">Tabelas de Apoio</div> <div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/811" class="text-wrap">Momento</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/819" class="text-wrap">Município</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/817" class="text-wrap">UF</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/813" class="text-wrap">Região</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/815" class="text-wrap">Tipo de Região</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/821" class="text-wrap">Recorte Geográfico</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/823" class="text-wrap">Base Geográfica</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/825" class="text-wrap">Periodicidade</a></div><div data-v-8d5c824a="" class="dropdown-item p-0"><a data-v-8d5c824a="" href="#/871" class="text-wrap">Órgão Siorg</a></div></div></div></li></ul></div></nav></div> <div data-v-e98654ca="" id="breadcrumb"><ol class="breadcrumb w-100 mb-2"><li class="breadcrumb-item">Você está aqui</li> <li class="breadcrumb-item"><a href="#/" class="router-link-active">Início</a></li> <li class="breadcrumb-item">PPA</li><li class="breadcrumb-item">Qualitativo</li><li class="breadcrumb-item">Objetivo Específico</li> <li class="flex-fill"><div class="float-right"><a id="manual-publico" href="" title="" alt="" target="_blank" style="display: none;"><i class="bi bi-question-square-fill fa-lg"></i></a> <a id="manual-restrito" href="" title=" - Manual restrito" alt="" target="_blank" style="display: none;"><i class="bi bi-question-square-fill text-info fa-lg"></i></a> <a id="permissoes" title="Permissões associadas a esta funcionalidade" href="#" style="display: none;"><i class="bi bi-shield-fill-check fa-lg"></i></a></div></li></ol> <div id="modalPermissoesAssociadasAoRecurso"><!----> <div class=""><div tabindex="-1" class="modal fade"><div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><span>Permissões associadas aos recursos da funcionalidade 
+      </span> <div class="float-right"><i role="button" aria-label="Close" class="fa fa-window-close-o text-white"></i></div></div> <div class="modal-body" style="overflow: hidden auto;"></div> <div class="modal-footer"><button class="btn btn-primary">Fechar</button></div></div></div></div></div></div></div> <div data-v-0f99e0c2="" data-v-e98654ca="" class="container px-0"><!----> <!----> <!----> <!----></div> <div data-v-e98654ca="" class=""><div tabindex="-1" class="modal fade"><div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><div class="w-100 bd-highlight"><i class="fas fa-file-contract"></i> Termo de uso e Aviso de Privacidade do SIOP</div></div> <div class="modal-body"><div><h2 class="text-center">
+                Termo de uso e Aviso de Privacidade
+            </h2></div> <div><p class="text-center">1.0 - Aprovado em 19/02/2025</p></div> <div><span>
+<style type="text/css">
+    .awlist1 {
+        list-style: none;
+        counter-reset: awlistcounter3_0
+    }
+
+    .awlist1>li:before {
+        content: counter(awlistcounter3_0, lower-latin) ')';
+        counter-increment: awlistcounter3_0
+    }
+</style>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><a name="_Toc130889860"></a><a name="_Toc139472278"></a><a name="_Toc139472381"></a><a name="_Toc175119596"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">TERMOS DE USO DO SISTEMA INTEGRADO DE PLANEJAMENTO E ORÇAMENTO</span></a></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Versão vigente: 1.0, aprovada em 19-02-2025, conforme Processo SEI 10080.000031/2025-38</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">1 Ciência do Termo de Uso</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O presente Termo de Uso se refere a um contrato de adesão firmado entre o usuário e o fornecedor deste serviço, o Ministério do Planejamento e Orçamento, por meio da Secretaria de Orçamento Federal, localizada na SEPN 516, Bloco D, Lote 8 – Asa Norte, Brasília, DF.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O uso do serviço está condicionado à ciência dos termos e das políticas associadas. O usuário deverá ler tais termos e políticas, certificar-se de havê-los entendido, estar consciente de todas as condições estabelecidas no Termo de Uso e se comprometer a cumpri-las.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Ao utilizar o serviço, o usuário manifesta estar ciente do conteúdo deste Termo de Uso e estará legalmente vinculado a todas as condições aqui previstas.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">2 Definições do Termo de Uso</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para os fins deste Termo de Uso, são aplicáveis as seguintes definições:&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<table cellspacing="0" cellpadding="0" style="width:100%; border-collapse:collapse;">
+    <tbody>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Agente público:&nbsp;</span></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Todo aquele que exerce, ainda que transitoriamente ou sem remuneração, por eleição, nomeação, designação, contratação ou qualquer outra forma de investidura ou vínculo, mandato, cargo, emprego ou função nos órgãos e entidades da Administração Pública, direta e indireta.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Agentes de Estado:&nbsp;</span></p>
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><em><span style="font-family:Arial;">&nbsp;</span></em></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Inclui órgãos e entidades da Administração pública além dos seus agentes públicos.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Códigos maliciosos:&nbsp;</span></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">São qualquer programa de computador, ou parte de um programa, construído com a intenção de provocar danos, obter informações não autorizadas ou interromper o funcionamento de sistemas e/ou redes de computadores.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Sítios:&nbsp;</span></p>
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">&nbsp;</span></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Sítios por meio dos quais o usuário acessa os serviços e conteúdos disponibilizados.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Terceiro:&nbsp;</span></p>
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">&nbsp;</span></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Pessoa ou entidade que não participa diretamente em um contrato, em um ato jurídico ou em um negócio, ou que, para além das partes envolvidas, pode ter interesse num processo jurídico.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Internet:&nbsp;</span></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Sistema constituído do conjunto de protocolos lógicos, estruturado em escala mundial para uso público e irrestrito, com a finalidade de possibilitar a comunicação de dados entre terminais por meio de diferentes redes.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:27.42%; padding:2.75pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Usuários:&nbsp;</span></p>
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">&nbsp;</span></p>
+            </td>
+            <td style="width:72.58%; padding-right:0.5pt; padding-left:0.5pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">(ou "Usuário", quando individualmente considerado): Todas as pessoas naturais que utilizam o SIOP, ou, quando aplicável e no que couber, o agente responsável por sistemas informatizados de outros órgãos que acessam as funcionalidades e dados do SIOP por meio de web services e/ou API.&nbsp;</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">3 Arcabouço Legal</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O arcabouço legal aplicável ao serviço Sistema Integrado de Planejamento e Orçamento compreende os seguintes atos legislativos e normativos:</p>
+<table cellspacing="0" cellpadding="0" style="width:440.2pt; border:0.75pt solid #000000; border-collapse:collapse;">
+    <tbody>
+        <tr style="height:15pt;">
+            <td style="width:205.65pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:8pt; text-align:justify; line-height:116%; font-size:12pt;">Constituição Federal de 1988, Título VI, Capítulo II, Seção II: Dos Orçamentos</p>
+            </td>
+            <td style="width:219.8pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:8pt; text-align:justify; line-height:116%; font-size:12pt;">Estabelece normas e princípios que regem o processo orçamentário no Brasil, incluindo a elaboração, a apreciação e a execução dos orçamentos públicos, bem como a organização do orçamento anual, da lei de diretrizes orçamentárias e do plano plurianual.</p>
+            </td>
+        </tr>
+        <tr style="height:15pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:8pt; text-align:justify; line-height:116%; font-size:12pt;">Lei Complementar nº 101, de 04 de maio de 2000</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:8pt; text-align:justify; line-height:116%; font-size:12pt;">Lei de Responsabilidade Fiscal - Estabelece normas de finanças públicas voltadas para a responsabilidade na gestão fiscal.</p>
+            </td>
+        </tr>
+        <tr style="height:15pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:8pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 4.320, de 17 de março de 1964</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:8pt; text-align:justify; line-height:116%; font-size:12pt;">Estatui Normas Gerais de Direito Financeiro para elaboração e controle dos orçamentos e balanços da União, dos Estados, dos Municípios e do Distrito Federal.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 10.180, de 6 de fevereiro de 2001</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Organiza e disciplina o Sistema de Planejamento e Orçamento Federal (SPOF)</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei de Diretrizes Orçamentárias (LDO) e Leis Orçamentárias Anuais (LOA)</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Estabelece as regras para a elaboração do orçamento do ano seguinte (LDO) e prevê as receitas e fixa as despesas do governo federal para o ano seguinte. Editadas anualmente.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 12.965, de 23 de abril de 2014 - Marco Civil da Internet</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Estabelece princípios, garantias, direitos e deveres para o uso da Internet no Brasil.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 12.527, de 18 de novembro de 2011 - Lei de Acesso à Informação</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Regula o acesso a informações previsto na Constituição Federal.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 13.460, de 26 de junho de 2017</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Dispõe sobre participação, proteção e defesa dos direitos do usuário dos serviços públicos da administração pública.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 13.709, de 14 de agosto de 2018 (LGPD – Lei Geral de Proteção de Dados)</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 13.444, de 11 de maio de 2017</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Dispõe sobre a Identificação Civil Nacional (ICN).</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Decreto nº 8.777, de 11 de maio de 2016</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Institui a Política de Dados Abertos do Poder Executivo federal.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Decreto nº 7.724, de 16 de maio de 2012</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Regulamenta a Lei no 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), que dispõe sobre o acesso a informações previsto na Constituição.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Decreto nº 7.845, de 14 de novembro de 2012</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Regulamenta procedimentos para credenciamento de segurança e tratamento de informação classificada em qualquer grau de sigilo, e dispõe sobre o Núcleo de Segurança e Credenciamento.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Decreto nº 10.046, de 09 de outubro de 2019</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Dispõe sobre a governança no compartilhamento de dados no âmbito da administração pública federal e institui o Cadastro Base do Cidadão e o Comitê Central de Governança de Dados.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Normas complementares do Gabinete de Segurança da Informação da Presidência (GSI/PR)</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Disciplinam a Gestão de Segurança da Informação e Comunicações na Administração Pública Federal, direta e indireta, e dá outras providências.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Decreto nº 9.637, de 26 de dezembro de 2018</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Institui a Política Nacional de Segurança da Informação, dispõe sobre a governança da segurança da informação, e altera o Decreto nº 2.295, de 4 de agosto de 1997, que regulamenta o disposto no art. 24, caput, inciso IX, da Lei nº 8.666, de 21 de junho de 1993, e dispõe sobre a dispensa de licitação nos casos que possam comprometer a segurança nacional.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Lei nº 12.737, de 30 de novembro de 2012</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Dispõe sobre a tipificação criminal de delitos informáticos.</p>
+            </td>
+        </tr>
+        <tr style="height:65.2pt;">
+            <td style="width:205.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Portaria SOF nº 130, de 16 de novembro de 2012</p>
+            </td>
+            <td style="width:219.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:3.12pt; padding-left:3.12pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:116%; font-size:12pt;">Disciplina o controle de acesso de usuários e sistemas clientes ao Sistema Integrado de Planejamento e Orçamento – SIOP.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">4 Descrição do Serviço</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O serviço ao qual se aplica este termo de uso é o Sistema Integrado de Planejamento e Orçamento, doravante denominado SIOP, que é desenvolvido, gerenciado e oferecido pelo Ministério do Planejamento e Orçamento, por meio da Secretaria de Orçamento Federal (SOF).</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O SIOP é o sistema estruturante que suporta os processos de Planejamento e de Orçamento no âmbito federal. Ele é composto por diversos módulos que atendem às necessidades específicas dos Agentes de Estado que compõem o Sistema de Planejamento e de Orçamento Federal, além de outros da esfera pública federal direta e indireta, incluindo os poderes Legislativo e Judiciário. O SIOP se comunica diretamente com o Sistema Integrado de Administração Financeira - SIAFI, bem como com outros sistemas da administração pública federal, por meio de web services disponibilizados pela SOF.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O uso do SIOP se dá:</p>
+<p style="margin-top:0pt; margin-left:36pt; margin-bottom:8pt; text-align:justify;">I – pelos órgãos públicos, por meio de seus respectivos usuários e/ou sistemas registrados e autenticados, os quais gerenciam, de acordo com suas competências e papéis, o ciclo de vida dos processos de planejamento e orçamento – a elaboração, a execução, o monitoramento e as alterações relativas ao Plano Plurianual, às Diretrizes Orçamentárias e aos Orçamentos Anuais.</p>
+<p style="margin-top:0pt; margin-left:36pt; margin-bottom:8pt; text-align:justify;">II – pelos cidadãos em geral, sem necessidade de registro ou autenticação prévia, para acesso a dados e informações disponibilizados em painéis, módulos de consulta, manuais e demais documentações.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O uso do SIOP é gratuito, não havendo tarifas ou taxas relativas à sua utilização.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">5 Direitos do Usuário do Serviço</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">De acordo com a Lei nº 13.460, de 26 de junho de 2017, são direitos básicos do usuário:</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<ol type="I" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;">Participação no acompanhamento da prestação e na avaliação dos serviços;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;">Obtenção e utilização dos serviços com liberdade de escolha entre os meios oferecidos e sem discriminação, observadas as legislações vigentes;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;">Acesso e obtenção de informações relativas à sua pessoa constantes de registros ou bancos de dados, observado o disposto no inciso X do caput do art. 5º da Constituição Federal e na Lei nº 12.527, de 18 de novembro de 2011;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;">Proteção de suas informações pessoais, nos termos da Lei nº 12.527, de 18 de novembro de 2011;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;">Atuação integrada e sistêmica na expedição de atestados, certidões e documentos comprobatórios de regularidade; e</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;">Obtenção de informações precisas e de fácil acesso nos locais de prestação do serviço, assim como sua disponibilização na internet, especialmente sobre:<ol type="a" style="margin-right:0pt; margin-left:0pt; padding-left:0pt;">
+            <li style="margin-left:33.01pt; padding-left:2.99pt;">horário de funcionamento das unidades administrativas;</li>
+            <li style="margin-left:33.01pt; padding-left:2.99pt;">serviços prestados pelo órgão ou entidade, sua localização exata e a indicação do setor responsável pelo atendimento ao público;</li>
+            <li style="margin-left:32.33pt; padding-left:3.67pt;">acesso ao agente público ou ao órgão encarregado de receber manifestações;</li>
+            <li style="margin-left:33.01pt; padding-left:2.99pt;">situação da tramitação dos processos administrativos em que figure como interessado; e</li>
+            <li style="margin-left:33.01pt; margin-bottom:10pt; padding-left:2.99pt;">valor das taxas e tarifas cobradas pela prestação dos serviços, contendo informações para a compreensão exata da extensão do serviço prestado.</li>
+        </ol>
+    </li>
+</ol>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">São também direitos dos cidadãos (direitos dos titulares de dados pessoais) aqueles previstos nos arts. 9º, 18 e 20 da LGPD.</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">6 Responsabilidades do Usuário</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O usuário se responsabiliza pela precisão e pela veracidade dos dados informados e reconhece que a inconsistência deles poderá implicar a impossibilidade de se utilizar o SIOP.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Durante a utilização do serviço, a fim de resguardar e de proteger os direitos de terceiros, o usuário se compromete a fornecer somente seus dados pessoais, e não os de terceiros.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O login e senha são pessoais e intransferíveis e só poderão ser utilizados pelo usuário cadastrado. O usuário se compromete em manter o sigilo da senha, não sendo possível, sob qualquer hipótese, a alegação de uso indevido após o ato de compartilhamento.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O usuário do serviço é responsável pela atualização dos seus dados pessoais e pelas consequências em caso de omissão ou erros nos dados fornecidos.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O usuário é responsável pela reparação de todos e quaisquer danos, diretos ou indiretos (inclusive decorrentes de violação de quaisquer direitos de outros usuários; de terceiros, inclusive direitos de propriedade intelectual; de sigilo; e de personalidade), que sejam causados à Administração Pública, a qualquer outro Usuário, ou ainda a qualquer terceiro, inclusive em virtude do descumprimento do disposto nestes Termos de Uso, no Aviso de Privacidade ou de qualquer ato praticado a partir de seu acesso ao serviço.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O uso comercial das expressões utilizadas em aplicativos como marca, nome empresarial ou nome de domínio, além dos conteúdos do serviço, assim como os programas, bancos de dados, redes e arquivos que permitem que o usuário acesse sua conta estão protegidos pelas leis e tratados internacionais de direito autoral, marcas, patentes, modelos e desenhos industriais.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Ao acessar o SIOP, os usuários declaram que irão respeitar todos os direitos de propriedade intelectual e os decorrentes da proteção de marcas, patentes e/ou desenhos industriais, depositados ou registrados em, bem como todos os direitos referentes a terceiros que porventura estejam, ou estiverem de alguma forma, disponíveis no serviço. O simples acesso ao serviço não confere aos usuários qualquer direito ao uso dos nomes, títulos, palavras, frases, marcas, patentes, imagens, dados e informações, dentre outras, que nele estejam ou estiveram disponíveis.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A reprodução de conteúdos descritos anteriormente está proibida, salvo com prévia autorização por escrito ou caso se destinem ao uso exclusivamente pessoal e sem que em nenhuma circunstância os usuários adquiram qualquer direito sobre esse conteúdo.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Tendo em vista que o serviço lida com informações pessoais, o usuário concorda que não usará robôs, sistemas de varredura e armazenamento de dados (como “spiders” ou “scrapers”), links escondidos ou qualquer outro recurso escuso, ferramenta, programa, algoritmo ou método coletor/extrator de dados automático para acessar, adquirir, copiar ou monitorar o serviço, sem permissão expressa por escrito da Secretaria de Orçamento Federal. Além disso, o usuário concorda que, ao acessar o SIOP, não realizará a transmissão de qualquer malware, worm, vírus, spyware ou outro código ou agente malicioso. O usuário concorda que não poderá inserir conteúdo ou códigos ou, de outra forma, alterar ou interferir na maneira como a página do serviço é exibida ou processada no dispositivo do usuário.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">É vedada a utilização do serviço para finalidades comerciais, publicitárias ou qualquer outra que contrarie a finalidade para a qual foi concebido, conforme definido neste documento, sob pena de sujeição às sanções cabíveis na Lei nº 9.610, de 19 de fevereiro de 1998, que protege os direitos autorais no Brasil e demais legislações pertinentes.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">7 Responsabilidade da Administração Pública</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Administração Pública Federal&nbsp; se compromete a cumprir todas as legislações inerentes ao uso correto dos dados pessoais do cidadão de forma a preservar a privacidade dos dados utilizados no serviço, bem como a garantir todos os direitos e garantias legais dos titulares dos dados. A Administração Pública Federal também se obriga a promover, independentemente de requerimentos e no âmbito de suas competências, a divulgação de informações de interesse coletivo ou geral por eles produzidas ou custodiadas, em local de fácil acesso. É de responsabilidade dos órgãos implementar controles de segurança para proteção dos dados pessoais dos titulares.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Administração Pública Federal não se responsabiliza pelos seguintes fatos:</p>
+<ol type="a" class="awlist1" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:36pt; text-indent:-18pt; text-align:justify;"><span style="width:7.33pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Equipamento infectado ou invadido por atacantes;</li>
+    <li style="margin-left:35.7pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:7.18pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Equipamento avariado no momento do consumo de serviços;</li>
+    <li style="margin-left:35.7pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:7.85pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Proteção do computador pelo qual se consome o serviço;</li>
+    <li style="margin-left:35.7pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:7.18pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Proteção das informações baseadas nos computadores dos usuários;</li>
+    <li style="margin-left:35.7pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:7.18pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Abuso de uso dos computadores dos usuários;</li>
+    <li style="margin-left:35.7pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:10.52pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Monitoração clandestina do computador dos usuários;</li>
+    <li style="margin-left:35.7pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:7.18pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Vulnerabilidades ou instabilidades existentes nos sistemas dos usuários;</li>
+    <li style="margin-left:35.7pt; margin-bottom:10pt; text-indent:-17.85pt; text-align:justify; line-height:150%;"><span style="width:7.18pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Perímetro inseguro.</li>
+</ol>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Em nenhuma hipótese, a Administração Pública Federal poderá ser responsabilizada pela instalação, no equipamento do usuário ou de terceiros, de códigos maliciosos (vírus, trojans, malware, worm, bot, backdoor, spyware, rootkit, ou de quaisquer outros que venham a ser criados), em decorrência da navegação na Internet pelo Usuário.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Diante de ordens judiciais de pedido de informações, os órgãos poderão compartilhar informações necessárias para investigações ou tomar medidas relacionadas a atividades ilegais, suspeitas de fraude ou ameaças potenciais contra pessoas, bens ou sistemas que sustentam o Serviço ou de outra forma necessárias para cumprir com obrigações legais. Caso ocorra, a Administração Pública notificará os titulares dos dados, salvo quando o processo estiver em segredo de justiça.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">8 Aviso de Privacidade</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O Aviso de Privacidade aplicado ao SIOP e estabelecido pela Secretaria de Orçamento Federal trata da utilização de dados pessoais.&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Esse Aviso específico faz parte de forma inerente do presente Termo de Uso, ressaltando-se que os dados pessoais mencionados por esse serviço serão tratados nos termos da legislação em vigor.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O Aviso de Privacidade do SIOP pode ser acessado no anexo a este Termo de Uso.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">9 Mudanças no Termo de Uso</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Secretaria de Orçamento Federal do Ministério do Planejamento e Orçamento, como órgão responsável pelo SIOP, se reserva ao direito de modificar, a qualquer momento, o presente documento, especialmente para adaptá-lo às evoluções do serviço, seja pela disponibilização de novas funcionalidades, seja pela supressão ou modificação daquelas já existentes.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Qualquer alteração e/ou atualização do Termos de Uso e do Aviso de Privacidade passará a vigorar a partir da data de sua publicação no sítio do serviço e deverá ser integralmente observada pelos Usuários.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">10 Informações para Contato</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Em caso de dúvidas relacionadas ao SIOP, o usuário do serviço deve entrar em contato por meio do Portal de Atendimento SIOP, disponível no seguinte endereço:<br><a href="https://www.siop.gov.br/atendimento" style="text-decoration:none;"><u><span style="color:#0000ff;">https://www.siop.gov.br/atendimento</span></u></a>.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para realizar manifestações, como denúncias, elogios, reclamações, sugestões e solicitações, ou para realizar o pedido de uma informação, o usuário deve entrar em contato com a Ouvidoria do Ministério do Planejamento e Orçamento por meio do canal FalaBR, disponível no endereço<br><a href="https://www.gov.br/acessoainformacao/pt-br/falabr" style="text-decoration:none;"><u><span style="color:#0000ff;">https://www.gov.br/acessoainformacao/pt-br/falabr</span></u></a><u><span style="color:#0000ff;">,</span></u> ou por meio dos outros canais de contato do encarregado pelo tratamento de dados pessoais, disponíveis no link <a href="https://www.gov.br/planejamento/pt-br/acesso-a-informacao/tratamento-de-dados-pessoais" style="text-decoration:none;"><u><span style="color:#0000ff;">https://www.gov.br/planejamento/pt-br/acesso-a-informacao/tratamento-de-dados-pessoais</span></u></a>.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">11 Foro</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Este Termo será regido pela legislação brasileira. Qualquer reclamação ou controvérsia com base neste Termo será dirimida exclusivamente pela comarca/seção judiciária de Brasília – Distrito Federal.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Sem prejuízo de qualquer outra via administrativa ou judicial disponível, todos os titulares de dados pessoais têm direito a apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><a name="_AVISO_DE_PRIVACIDADE"></a><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">ANEXO: AVISO DE PRIVACIDADE DO SISTEMA DE PLANEJAMENTO E ORÇAMENTO FEDERAL</span></h1>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">1</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Disposições gerais</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O presente Aviso de Privacidade é um documento específico que versa sobre a utilização e o tratamento de dados pessoais pelo Sistema Integrado de Planejamento e Orçamento – SIOP.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Este aviso é estabelecido pela Secretaria de Orçamento Federal, do Ministério do Planejamento e Orçamento, e é parte inerente, integrante e indissociável dos Termos de Uso do SIOP, devendo ser interpretada conjuntamente com esse documento. A ciência dos Termos de Uso implica na ciência deste Aviso de Privacidade.</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">2</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Definições</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para melhor compreensão deste documento, neste Aviso de Privacidade, consideram-se:</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<table cellspacing="0" cellpadding="0" style="width:100%; border-collapse:collapse;">
+    <tbody>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Agentes de tratamento:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">O controlador e o operador.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Anonimização:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Utilização de meios técnicos razoáveis e disponíveis no momento do tratamento, por meio dos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Autoridade Nacional:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Órgão da administração pública responsável por zelar, implementar e fiscalizar o cumprimento desta Lei em todo o território nacional.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Consentimento:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento de seus dados pessoais para uma finalidade determinada.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Controlador:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Dado Anonimizado:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Dado relativo a um titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Dado Pessoal:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Informação relacionada a uma pessoa natural identificada ou identificável.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Encarregado:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Operador:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Órgão de Pesquisa:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Órgão ou entidade da administração pública direta ou indireta ou pessoa jurídica de direito privado sem fins lucrativos, legalmente constituída sob as leis brasileiras e com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada de caráter histórico, científico, tecnológico ou estatístico.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Titular:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Pessoa natural a quem se referem os dados pessoais que são objeto de tratamento.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Transferência Internacional de Dados:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:36.48%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Tratamento:</p>
+            </td>
+            <td style="width:63.52%; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">Toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">3</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Base legal para tratamento de dados pessoais</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O tratamento de dados pessoais objeto desse Aviso de Privacidade se enquadra na hipótese de execução de políticas públicas prevista no inciso III do art. 7º da LGPD. Este Aviso de Privacidade foi elaborado em conformidade com a Lei Federal nº 12.965 de 23 de abril de 2014 (Marco Civil da Internet) e com a Lei Federal nº 13.709, de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais - LGPD), respeitando-se os princípios dispostos em seu art. 6º, quais sejam:</p>
+<ol type="I" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Finalidade</strong>: realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Adequação</strong>: compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Necessidade</strong>: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Livre acesso</strong>: garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Qualidade dos dados</strong>: garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Transparência</strong>: garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial;</li>
+    <li style="margin-left:23.01pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Segurança</strong>: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;</li>
+    <li style="margin-left:26.34pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Prevenção</strong>: adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais;</li>
+    <li style="margin-left:23pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Não discriminação</strong>: impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos;</li>
+    <li style="margin-left:23pt; margin-bottom:10pt; text-align:justify; line-height:150%; padding-left:13pt;"><strong>Responsabilização e prestação de contas</strong>: demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas.</li>
+</ol>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">4</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Controlador</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Lei Geral de Proteção de Dados Pessoais define como controlador, em seu art. 5º, inciso VI, a pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para o Sistema Integrado de Planejamento e Orçamento, as decisões referentes ao tratamento de dados pessoais são de responsabilidade do Ministério do Planejamento e Orçamento, por meio da Secretaria de Orçamento Federal.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Endereço: SEPN 516 Bloco D, Lote 8, Asa Norte – Brasília, DF.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Contato: Portal de Atendimento do SIOP, disponível em <a href="https://www.siop.gov.br/atendimento" style="text-decoration:none;"><u><span style="color:#0000ff;">https://www.siop.gov.br/atendimento</span></u></a></p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">5</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Operador</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Lei Geral de Proteção de Dados Pessoais define como operador, em seu art. 5º, inciso VII, a pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para o SIOP, a depender do caso, quem pode realizar o tratamento de dados pessoais como operadores são os cadastradores locais do SIOP presentes nos órgãos, nos termos da Portaria de Controle de Acesso ao sistema, e, eventualmente, empresas contratadas pela Secretaria de Orçamento Federal para prestar suporte aos ambientes tecnológicos associados ao SIOP. Assim, as informações de contato dos demais operadores são:</p>
+<ul type="disc" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Os cadastradores responsáveis em cada órgão cujas informações estão disponíveis em</span><span style="font-family:Aptos;">&nbsp;&nbsp;</span><a href="https://www1.siop.planejamento.gov.br/siopdoc/doku.php/gestao_de_usuarios_cadastrador_local:lista_cadastradores_locais" style="text-decoration:none;"><u><span style="font-family:Aptos; color:#0000ff;">https://www1.siop.planejamento.gov.br/siopdoc/doku.php/gestao_de_usuarios_cadastrador_local:lista_cadastradores_locais</span></u></a><span style="font-family:Aptos;">;</span></li>
+    <li style="margin-left:28.52pt; margin-bottom:10pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Empresa Contratada: CENTRAL IT TECNOLOGIA DA INFORMAÇÃO LTDA: Endereço: Setor Hoteleiro Norte, quadra 2, bloco F, Ed. Executive Office Tower, 17o Andar. E- mail: comercial@centralit.com.br, Telefone: 61 3030-4000.</span></li>
+</ul>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">6</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Encarregado</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Lei Geral de Proteção de Dados Pessoais define como encarregado, em seu art. 5º, inciso VIII, a pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para o SIOP, o responsável por atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados é o Encarregado pelo Tratamento de Dados Pessoais do Ministério do Planejamento e Orçamento. Seu nome e informações de contato podem ser visualizados no endereço abaixo:</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;"><a href="https://www.gov.br/planejamento/pt-br/acesso-a-informacao/tratamento-de-dados-pessoais" style="text-decoration:none;"><u><span style="color:#0000ff;">https://www.gov.br/planejamento/pt-br/acesso-a-informacao/tratamento-de-dados-pessoais</span></u></a>.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O usuário poderá entrar em contato com o encarregado por meio dos seus canais de atendimento, para sanar quaisquer dúvidas sobre esta Política de Privacidade ou para obter mais informações sobre o tratamento dos dados realizado com fundamento na LGPD.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">7</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Direitos do titular de dados pessoais</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O titular de dados pessoais possui os seguintes direitos, conferidos pela Lei Geral de Proteção de Dados Pessoais (LGPD):</p>
+<ul type="disc" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Direito de confirmação e acesso (art. 18, incisos I e II): é o direito do titular de dados de obter do serviço a confirmação de que os dados pessoais que lhe digam respeito são ou não objeto de tratamento e, se for esse o caso, o direito de acessar os seus dados pessoais.</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Direito de retificação (art. 18, inciso III): é o direito de solicitar a correção de dados incompletos, inexatos ou desatualizados.</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Direito à limitação do tratamento dos dados (art. 18, inciso IV): é o direito do titular de dados de limitar o tratamento de seus dados pessoais, podendo exigir a eliminação de dados desnecessários, excessivos ou tratados em desconformidade com o disposto na Lei Geral de Proteção de Dados Pessoais.</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Direito de oposição (art. 18, § 2º): é o direito do titular de dados de, a qualquer momento, opor-se ao tratamento de dados por motivos relacionados com a sua situação particular, com fundamento em uma das hipóteses de dispensa de consentimento ou em caso de descumprimento ao disposto na Lei Geral de Proteção de Dados Pessoais.</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Direito de portabilidade dos dados (art. 18, inciso V): é o direito do titular de dados de realizar a portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da autoridade nacional, observados os segredos comercial e industrial.</span></li>
+    <li style="margin-left:28.52pt; margin-bottom:10pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Direito de não ser submetido a decisões automatizadas (art. 20): o titular dos dados tem direito a solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado de dados pessoais que afetem seus interesses, incluídas as decisões destinadas a definir o seu perfil pessoal, profissional, de consumo e de crédito ou os aspectos de sua personalidade.</span></li>
+</ul>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para exercer seus direitos, os titulares podem acessar informações no site do MPO ou entrar em contato com a instituição por meio dos canais disponíveis no seguinte endereço:</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;"><a href="https://www.gov.br/planejamento/pt-br/acesso-a-informacao/tratamento-de-dados-pessoais" style="text-decoration:none;"><u><span style="color:#0000ff;">https://www.gov.br/planejamento/pt-br/acesso-a-informacao/tratamento-de-dados-pessoais</span></u></a><u><span style="color:#0000ff;">.</span></u></p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">8</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Quais dados são tratados</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">De modo geral, os dados pessoais tratados pelo SIOP se referem àqueles necessários para a correta identificação dos usuários registrados e de dados técnicos estatísticos anônimos dos acessos em geral.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A utilização das funcionalidades do SIOP pelo titular de dados pessoais dependerá do tratamento dos seguintes dados pessoais, para o caso dos usuários registrados e autenticados:</p>
+<ul type="disc" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Nome completo;</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Número de inscrição no Cadastro de Pessoas Físicas - CPF;</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Endereço de e-mail principal;</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Endereço de e-mail alternativo;</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Número de telefone;</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Registro do acesso autenticado ao SIOP, contendo um identificador único do usuário, data e hora de acesso e endereço IP associado;</span></li>
+    <li style="margin-left:28.52pt; margin-bottom:10pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Registro de auditoria de ações realizadas no sistema, contendo identificador único do usuário e número do CPF, a data, hora e a ação realizada.</span></li>
+</ul>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para todos os acessos ao SIOP, independentemente de serem por parte de usuários registrados ou não, são coletadas informações técnicas básicas da conexão aos módulos do sistema:</p>
+<ul type="disc" style="margin:0pt; padding-left:0pt;">
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Endereço IP da conexão;</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Dados do cliente de acesso e do dispositivo (“user agent”, sistema operacional e modelo de hardware);</span></li>
+    <li style="margin-left:28.52pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">Dados de localização da conexão; e</span></li>
+    <li style="margin-left:28.52pt; margin-bottom:10pt; text-align:justify; line-height:150%; padding-left:7.48pt; font-family:serif;"><span style="font-family:Aptos;">URL’s dos recursos acessados (páginas, painéis, dados, formulários etc).</span></li>
+</ul>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Nos casos de acessos por parte de usuários não registrados (ou seja, acessos não autenticados), não há coleta de informações que permitam associar um determinado acesso a um usuário específico.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Não há tratamento de dados pessoais de crianças e adolescentes pelo SIOP.</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">9</span><span style="width:6.88pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Como os dados são coletados</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A forma como os seus dados pessoais são coletados é indicada na tabela a seguir:</p>
+<table cellspacing="0" cellpadding="0" style="width:100%; border:0.75pt solid #000000; border-collapse:collapse;">
+    <tbody>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><strong><span style="font-family:Arial;">DADOS TRATADOS</span></strong></p>
+            </td>
+            <td style="width:62.9%; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><strong><span style="font-family:Arial;">FORMA DE COLETA DOS DADOS</span></strong></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Nome completo</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Informado pelo usuário ao respectivo cadastrador, o qual o insere no SIOP na etapa de cadastro inicial do usuário ou alteração/correção posterior.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Número de inscrição no CPF</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Informado pelo usuário ao respectivo cadastrador, o qual o insere no SIOP na etapa de cadastro inicial do usuário ou alteração/correção posterior.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Endereço de e-mail principal</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Informado pelo usuário ao respectivo cadastrador, o qual o insere no SIOP na etapa de cadastro inicial do usuário ou alteração/correção posterior, com possibilidade de alteração pelo próprio usuário.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Endereço de e-mail alternativo</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Informado pelo usuário ao respectivo cadastrador, o qual o insere no SIOP na etapa de cadastro inicial do usuário ou alteração/correção posterior, com possibilidade de alteração pelo próprio usuário.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Número de telefone</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Informado pelo usuário ao respectivo cadastrador, o qual o insere no SIOP na etapa de cadastro inicial do usuário ou alteração/correção posterior, com possibilidade de alteração pelo próprio usuário.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Registro de Acesso autenticado, contendo identificador único do usuário, data e hora de acesso e endereço IP.</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Registrado automaticamente pelo sistema no momento do acesso autenticado ao SIOP, após a ciência deste Aviso de Privacidade.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Registro de auditoria de ações realizadas no sistema, contendo identificador único do usuário, número CPF, a data, hora e a ação realizada</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Registrado automaticamente pelo sistema no momento da realização de ações críticas no sistema, resultantes de tomada de decisão.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Endereço IP da conexão</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Obtido pelo sistema no momento do acesso a qualquer recurso do SIOP.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Dados do cliente de acesso e do dispositivo (“user agent”, sistema operacional, modelo de hardware)</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Obtido pelo sistema no momento do acesso a qualquer recurso do SIOP.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:37.1%; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Localização da conexão</span></p>
+            </td>
+            <td style="width:62.9%; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span style="font-family:Arial;">Inferido de forma automática por meio do georreferenciamento do endereço IP da conexão.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">10</span><span style="width:13.75pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Qual o tratamento realizado e para qual finalidade</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O tratamento dos dados pessoais eventualmente coletados, armazenados e utilizados pelo SIOP é realizado com a finalidade geral de prover e manter o cadastro dos usuários e as informações técnicas necessárias ao funcionamento do SIOP, de forma a viabilizar a utilização correta e segura do sistema para que a execução da política pública de gestão orçamentária e financeira da Administração Pública Federal seja possibilitada. A finalidade do tratamento individual de cada um dos dados pessoais utilizados é detalhada na tabela a seguir:</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<table cellspacing="0" cellpadding="0" style="width:468.25pt; border:0.75pt solid #000000; border-collapse:collapse;">
+    <tbody>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><strong><span style="font-family:Arial;">DADO</span></strong></p>
+            </td>
+            <td style="width:121.25pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><strong><span style="font-family:Arial;">TRATAMENTO</span></strong></p>
+            </td>
+            <td style="width:181.5pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; font-size:10pt;"><strong><span style="font-family:Arial;">FINALIDADE</span></strong></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Nome completo</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, armazenamento e arquivamento</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">O dado é necessário para identificação do usuário</p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Número de inscrição no CPF</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, utilização, armazenamento e arquivamento</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para acesso e identificação do usuário e para atribuir permissões no SIOP</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Endereço de e-mail principal</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, armazenamento e comunicação</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para estabelecer canal de comunicação com o usuário acerca do uso do SIOP</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Endereço de e-mail alternativo</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, armazenamento e comunicação</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para estabelecer canal de comunicação com o usuário acerca do uso do SIOP</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Número de telefone</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, armazenamento e comunicação</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para estabelecer canal de comunicação com o usuário acerca do uso do SIOP</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Registro do acesso autenticado ao SIOP, contendo o identificador único do usuário, data e hora de acesso e endereço IP associado</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, controle, armazenamento e arquivamento</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para realizar o registro de auditoria de todos os acessos autenticados ao sistema, conforme legislação vigente.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Registro de auditoria de ações realizadas no sistema, contendo identificador único do usuário, número CPF, a data, hora e a ação realizada</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, controle, armazenamento e arquivamento</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para realizar o registro de auditoria das ações críticas e decisórias efetuadas no sistema, conforme legislação vigente.</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Endereço IP da conexão</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, avaliação, classificação, coleta, controle, processamento, utilização, armazenamento, arquivamento, eliminação</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:1pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para realizar controles de segurança de acesso ao SIOP e melhorar a experiência do usuário</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Dados do cliente de acesso e do dispositivo (“user agent”, modelo de hardware, sistema operacional)</p>
+            </td>
+            <td style="width:121.25pt; border-style:solid; border-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, avaliação, classificação, coleta, controle, processamento, utilização, eliminação</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para realizar controles de segurança de acesso ao SIOP e melhorar a experiência do usuário</span></p>
+            </td>
+        </tr>
+        <tr style="height:19.85pt;">
+            <td style="width:157.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding:2.75pt 2.38pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:116%; font-size:12pt;">Localização da conexão</p>
+            </td>
+            <td style="width:121.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Acesso, avaliação, classificação, coleta, controle, processamento, utilização, armazenamento, arquivamento, eliminação</span></p>
+            </td>
+            <td style="width:181.5pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:0.12pt; padding-left:0.12pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">O dado é necessário para realizar controles de segurança de acesso ao SIOP e melhorar a experiência do usuário</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O tempo de retenção dos dados pessoais descritos na tabela anterior, ao serem armazenados e arquivados, é permanente, para fins de controle e auditoria. Os dados coletados correspondentes ao acesso às áreas não logadas do SIOP (endereço IP da conexão, dados do cliente de acesso e do dispositivo e localização da conexão) podem ser eventualmente eliminados ou reduzidos em quantidade, quando do exaurimento da sua finalidade e necessidade técnica.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">11</span><span style="width:13.75pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Compartilhamento de dados</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Os dados pessoais tratados pelo SIOP se restringem apenas ao estritamente necessário para o seu funcionamento e não são compartilhados com terceiros, em nenhuma hipótese.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">12</span><span style="width:13.75pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Transferência internacional de dados</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O SIOP não realiza transferência internacional de dados.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">13</span><span style="width:18.25pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Segurança dos dados</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A violação de dados pessoais é uma violação de segurança que provoca, de modo acidental ou ilícito, a destruição, a perda, a alteração, a divulgação ou o acesso não autorizado a dados pessoais transmitidos, conservados ou sujeitos a qualquer outro tipo de tratamento.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O MPO se compromete a aplicar as medidas técnicas e organizativas aptas a proteger os dados pessoais de acessos não autorizados e de situações de destruição, perda, alteração, comunicação ou difusão de tais dados.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Para a garantia da segurança, são adotadas soluções que levem em consideração: as técnicas adequadas; os custos de aplicação; a natureza, o âmbito, o contexto e as finalidades do tratamento; e os riscos para os direitos e liberdades do usuário.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O serviço utiliza criptografia para que os dados sejam transmitidos de forma segura e confidencial, de maneira que a transmissão dos dados entre o SIOP e o usuário, e em retroalimentação, ocorra de maneira totalmente cifrada ou encriptada.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">No entanto, o serviço se exime de responsabilidade por culpa exclusiva de terceiros, como em caso de ataque de hackers ou crackers, ou culpa exclusiva do usuário, como no caso em que ele mesmo transfere seus dados a terceiro. O SIOP se compromete, ainda, a comunicar o usuário em prazo adequado caso seja identificado algum tipo de violação da segurança de seus dados pessoais que possa lhe causar um alto risco para seus direitos e liberdades pessoais.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Por fim, o serviço se compromete a tratar os dados pessoais do usuário com confidencialidade, dentro dos limites legais.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">14</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Cookies</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Cookies são pequenos arquivos de texto enviados pelo site ao computador do usuário e que nele ficam armazenados, com informações relacionadas à navegação do site.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Por meio dos cookies, pequenas quantidades de informação são armazenadas pelo navegador do usuário para que o SIOP possa lê-las posteriormente. Podem ser armazenados, por exemplo, dados sobre o dispositivo utilizado pelo usuário, bem como seu local e horário de acesso ao site.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">É importante ressaltar que nem todo cookie contém dados pessoais do usuário, já que determinados tipos de cookies podem ser utilizados somente para que o serviço funcione corretamente – estes são os cookies essenciais.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Dados pessoais podem eventualmente ser armazenadas em cookies. Todas as regras previstas neste Aviso de Privacidade também são aplicáveis aos referidos cookies.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">O SIOP utiliza cookies essenciais estritamente necessários, com base na hipótese legal da execução de políticas públicas (inciso III do Art. 7 º da Lei 13.709, de 14 de agosto de 2018), os quais não podem ser desativados no sistema. Esses cookies permitem funcionalidades essenciais para o fornecimento dos serviços, tais como segurança, verificação de identidade, gestão de sessões e gestão de rede. Embora sejam necessários, você pode bloquear esses cookies diretamente no seu navegador, o que pode comprometer a sua experiência e prejudicar o funcionamento do serviço. Os cookies utilizados são:</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<table cellspacing="0" cellpadding="0" style="width:469pt; border:1pt solid #000000; border-collapse:collapse;">
+    <tbody>
+        <tr>
+            <td style="width:149.75pt; border-right-style:solid; border-right-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; padding:2.75pt 2.25pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><strong><span style="font-family:Arial;">Nome do Cookie</span></strong></p>
+            </td>
+            <td style="width:311.75pt; border-left-style:solid; border-left-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><strong><span style="font-family:Arial;">Finalidade da utilização</span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:149.75pt; border-top-style:solid; border-top-width:1pt; border-right-style:solid; border-right-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; padding:2.75pt 2.25pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">JSESSIONID</span></p>
+            </td>
+            <td style="width:311.75pt; border-top-style:solid; border-top-width:1pt; border-left-style:solid; border-left-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Registrar um identificador único para a sessão do usuário autenticado no sistema. Armazena uma sequência de caracteres alfanuméricos aleatórios, que expiram ao final da sessão.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:149.75pt; border-top-style:solid; border-top-width:1pt; border-right-style:solid; border-right-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; padding:2.75pt 2.25pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Xrfkey, qlikmachineid, AccessPointSession, DokuWiki</span></p>
+            </td>
+            <td style="width:311.75pt; border-top-style:solid; border-top-width:1pt; border-left-style:solid; border-left-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Registrar identificadores alfanuméricos aleatórios e parâmetros da sessão HTTP do acesso aos ambientes de painéis de dados, cadastros de ações e manuais, necessários para o correto funcionamento da renderização do conteúdo das páginas pelo navegador web do usuário. Não contém dados pessoais. Expiram ao final da sessão HTTP.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:149.75pt; border-top-style:solid; border-top-width:1pt; border-right-style:solid; border-right-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; padding:2.75pt 2.25pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">ice.lease, ice.sessions, bconn e updates</span></p>
+            </td>
+            <td style="width:311.75pt; border-top-style:solid; border-top-width:1pt; border-left-style:solid; border-left-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Registrar identificadores alfanuméricos aleatórios e parâmetros da sessão HTTP do acesso ao SIOP, necessários para o correto funcionamento da renderização do conteúdo das páginas pelo navegador web do usuário. Não contém dados pessoais. Expiram ao final da sessão HTTP.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:149.75pt; border-top-style:solid; border-top-width:1pt; border-right-style:solid; border-right-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; padding:2.75pt 2.25pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">glpi_&lt;valor&gt;</span></p>
+            </td>
+            <td style="width:311.75pt; border-top-style:solid; border-top-width:1pt; border-left-style:solid; border-left-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Registrar um identificador único para a sessão do usuário autenticado no Portal de Atendimento do SIOP. Armazena uma sequência de caracteres alfanuméricos aleatórios, que expiram ao final da sessão.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:149.75pt; border-top-style:solid; border-top-width:1pt; border-right-style:solid; border-right-width:1pt; padding:2.75pt 2.25pt; vertical-align:middle; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">TS01ecd73c, INGRESSCOOKIE, Govbrid, Govbrcoord, Session_Gov_Br_Prod, Third-Party-Cookie-Support-Test</span></p>
+            </td>
+            <td style="width:311.75pt; border-top-style:solid; border-top-width:1pt; border-left-style:solid; border-left-width:1pt; vertical-align:top; background-color:#ffffff;">
+                <p style="margin:0pt 2.85pt; text-align:justify; line-height:150%; font-size:10pt;"><span style="font-family:Arial;">Registram identificadores únicos da sessão de autenticação e parâmetros mínimos para o funcionamento da integração da autenticação do SIOP via acesso Gov.Br. Armazenam sequências alfanuméricas aleatórias e valores booleanos. Expiram a cada sessão de autenticação.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">15</span><span style="width:13.75pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Tratamento posterior dos dados para outras finalidades</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Informações sobre dados do cliente de acesso (navegador ou outro cliente) e do dispositivo, dentre outros, podem ser utilizados pelo Ministério do Planejamento e Orçamento para melhoria contínua dos serviços e aprimoramento da experiência do usuário no âmbito do SIOP.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Administração Pública Federal poderá receber eventuais pedidos de exclusão de dados pessoais, que serão analisados tendo em vista a compatibilidade com a necessidade de manutenção dos registros de acesso e registros de auditoria de ações realizadas no sistema, que são arquivados para fins de auditoria, e endereços IP e localização de conexões, que poderão ser armazenados para implementação de controles de segurança.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<h1 style="margin-top:18pt; margin-bottom:4pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:20pt;"><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">16</span><span style="width:13.75pt; font:7pt 'Times New Roman'; display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Aptos Display'; font-weight:normal; color:#0f4761;">Mudanças no Aviso de Privacidade</span></h1>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">&nbsp;</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">A Secretaria de Orçamento Federal se reserva ao direito de modificar, a qualquer momento, o presente Aviso de Privacidade, especialmente para adaptá-lo às evoluções do SIOP, seja pela disponibilização de novas funcionalidades, seja pela supressão ou modificação daquelas já existentes.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Este Aviso de Privacidade poderá ser atualizado em decorrência de eventual atualização normativa, razão pela qual se convida o usuário a consultar periodicamente esta seção. Sempre que houver atualização, a nova versão do Aviso de Privacidade será disponibilizada quando o usuário for acessar novamente a área logada do SIOP.</p>
+<p style="margin-top:0pt; margin-bottom:8pt; text-align:justify;">Quaisquer dúvidas relacionadas à utilização do SIOP poderão ser sanadas por meio do Portal de Atendimento do SIOP, disponível em https://www.siop.gov.br/atendimento.</p></span></div></div> <div class="modal-footer"><div class="form-check"><input type="checkbox" id="chkConcordo" class="form-check-input"> <label for="chkConcordo" class="form-check-label">
+                Estou ciente do Termo de Uso e Aviso de Privacidade
+            </label></div> <button disabled="disabled" class="btn btn-primary">Confirmar</button></div></div></div></div></div></header> <main data-v-e98654ca=""><div data-v-e98654ca="" class="row miolo"><div data-v-e98654ca="" class="col-sm-12"><div data-v-3456fc4e="" data-v-e98654ca="">
+    Carregando
+   <p data-v-3456fc4e="" style="color: red; font-size: 15px; text-align: center;"><b data-v-3456fc4e="">Favor escolher um Exercício</b></p> <!----> <div data-v-3456fc4e="" style="text-align: center;"><iframe data-v-3456fc4e="" id="iframe" scrolling="no" style="width: 100%; border: 0px; overflow: hidden; height: 0px;"></iframe> <!----> <div data-v-3456fc4e="" id="erro" role="alert" class="alert alert-warning" style="display: none;"><p data-v-3456fc4e="" style="font-size: 15px;"><i data-v-3456fc4e="" class="fa fa-exclamation-triangle"></i> <b data-v-3456fc4e="">Esta página está levando mais tempo que o normal para ser carregada.
+          <br data-v-3456fc4e="">Deseja recarregá-la?</b> <button data-v-3456fc4e=""><i data-v-3456fc4e="" class="fa fa-refresh"></i> Recarregar</button></p></div></div></div> <!----></div></div></main> <footer data-v-e98654ca=""><div data-v-28aa352b="" data-v-e98654ca="" class="row mt-2"><div data-v-28aa352b="" class="col-sm-12"><div data-v-28aa352b="" class="siop_rodape_conteudo_linha_03"><p data-v-28aa352b="" class="text-center">
+          Última atualização em:
+          23/05/2025, 17:35:22
+          <a data-v-28aa352b="" href="#"><i data-v-28aa352b="" class="fas fa-eye"></i>
+            (Mostrar detalhes)
+          </a></p> <a data-v-28aa352b="" href="#" style="display: none;"><i data-v-28aa352b="" class="fas fa-sync"></i> Atualizar informações
+        </a> <!----></div> <div data-v-28aa352b="" class="siop_rodape_conteudo_linha_04"><p data-v-28aa352b="" class="text-center">SIOP - Sistema Integrado de Planejamento e Orçamento</p></div></div> <div data-v-28aa352b="" class=""><div tabindex="-1" class="modal fade"><div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"><div class="modal-content"><div data-v-28aa352b="" class="modal-header"><div data-v-28aa352b="" class="w-100 bd-highlight"><i data-v-28aa352b="" class="fas fa-bullhorn"></i> Histórico de Mudanças do </div> <div data-v-28aa352b="" class="flex-shrink-1 bd-highlight"><i data-v-28aa352b="" role="button" aria-label="Close" class="fa fa-window-close-o text-white"></i></div></div> <div data-v-28aa352b="" class="modal-body"><div data-v-28aa352b="" class="col-12"><div data-v-28aa352b="" class="row"><label data-v-28aa352b="" for="componente" class="col-sm-4 col-form-label">Componente</label> <div data-v-28aa352b="" class="col-sm-8"><span data-v-28aa352b="" class="form-control-plaintext"><i data-v-28aa352b=""></i> 
+              </span></div></div> <div data-v-28aa352b="" class="row"><label data-v-28aa352b="" for="descricao" class="col-sm-4 col-form-label">Descrição</label> <div data-v-28aa352b="" class="col-sm-8"><input data-v-28aa352b="" id="descricao" type="text" readonly="readonly" class="form-control-plaintext"></div></div> <div data-v-28aa352b="" class="row"><label data-v-28aa352b="" for="branch" class="col-sm-4 col-form-label">Branch</label> <div data-v-28aa352b="" class="col-sm-8"><input data-v-28aa352b="" id="branch" type="text" readonly="readonly" class="form-control-plaintext"></div></div> <!----> <div data-v-28aa352b="" class="row"><label data-v-28aa352b="" for="horaCompilacao" class="col-sm-4 col-form-label">Construído em</label> <div data-v-28aa352b="" class="col-sm-8"><input data-v-28aa352b="" id="horaCompilacao" type="text" readonly="readonly" class="form-control-plaintext"></div></div> <!----> <!----> <!----></div></div> <div data-v-28aa352b="" class="modal-footer"><button data-v-28aa352b="" class="btn btn-secondary">Fechar</button></div></div></div></div></div></div></footer></div><div id="DqaXzqmG5" role="status" aria-live="polite" aria-atomic="false"></div></body></html>
