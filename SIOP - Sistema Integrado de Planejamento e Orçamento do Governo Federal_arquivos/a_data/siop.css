@@ -1,0 +1,30 @@
+/* -- Importando os estilos do icefaces -- */
+@import "../xmlhttp/css/xp/xp.css";
+
+/* -- Importando os estilos customizados para as grid's do icefaces -- */
+@import "_layout_grid.css";
+
+/* -- Aplica as correções de css do icefaces para o sistema -- */
+@import "icefaces-fix.css";
+@import "icefaces-fix-default.css";
+ 
+/* -- Base do sistema: Define as tags padrões do sistema. Tais como Listas, cores etc -- */
+@import "_base.css"; 
+
+/* -- Define a estrutura e formas geral do sistema. Alguns itens do Icefaces são sobrescritos -- */
+@import "_layout-siop.css";
+
+/*  -- Formulários: Define a formatação básica dos itens de formulários. Alguns itens do Icefaces são sobrescritos  -- */
+@import "_form.css";
+
+/* -- Formatação modulo de pesquisa -- */
+@import "pesquisa.css";
+
+/* -- Formatação modulo de Alterações -- */
+@import "_layout-alteracao.css";
+
+/* -- Formatação modulo de Alterações -- */
+@import "_estilo_mod_gerencial.css";
+
+/*  -- Formulários do ambiente de treinamento  -- */
+@import "_estilo_treinamento.css";
