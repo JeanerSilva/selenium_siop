@@ -93,7 +93,7 @@ def aguardar_login_manual(wait, driver, timeout=1200):
     try:
         print("🕵️ Verificando se é necessário login manual...")
 
-        # Verifica se o botão de login gov.br está presente
+        # Passo 1: Verifica se o botão de login gov.br aparece
         botao_login = wait.until(
             EC.presence_of_element_located(
                 (By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]')
@@ -101,23 +101,19 @@ def aguardar_login_manual(wait, driver, timeout=1200):
         )
 
         if botao_login.is_displayed():
-            print(f"🔒 Login não detectado. Aguardando até {timeout} segundos para que o usuário entre com gov.br...")
+            print(f"🔒 Login não detectado. Aguardando até {timeout} segundos para que o usuário inicie o login com gov.br...")
+            botao_login.click()
 
-            # Espera até que o botão de login desapareça (indicando que o login foi feito)
-            inicio = time.time()
-            while time.time() - inicio < timeout:
-                try:
-                    driver.find_element(By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]')
-                    time.sleep(2)  # aguarda antes de verificar novamente
-                except NoSuchElementException:
-                    print("✅ Botão de login desapareceu.")
-                    time.sleep(20)  # aguarda mais um pouco para garantir que o login foi concluído
-                    return
+            # Passo 2: Espera o campo para digitar o CPF aparecer
+            wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="enter-account-id"]')))
+            print("⌨️ Campo para CPF detectado. Aguardando usuário digitar e prosseguir...")
 
- 
-            print("⚠️ Tempo limite para login manual atingido.")
+            # Passo 3: Aguarda até o botão de envio aparecer (após o preenchimento do CPF)
+            wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="submit-button"]')))
+            print("📨 Botão de envio detectado. Login em andamento...")
+
         else:
             print("✅ Usuário já está logado (botão de login não visível).")
 
     except TimeoutException:
-        print("✅ Login não parece necessário (botão não apareceu dentro do tempo esperado).")
+        print("⚠️ Elementos de login não apareceram dentro do tempo esperado.")

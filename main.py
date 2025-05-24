@@ -19,11 +19,11 @@ def iniciar_driver():
         print("⚠️ Não foi possível encerrar processos do Edge ou nenhum processo estava ativo.")
 
     edge_options = Options()
-    edge_options.add_argument(r'--user-data-dir=C:\\Users\\1765 IRON\\AppData\\Local\\Microsoft\\Edge\\User Data')
-    edge_options.add_argument('--profile-directory=Profile 1')
-    #edge_options.add_argument('--start-maximized')
-    #edge_options.add_argument("--user-data-dir=C:/SEPLAN/edge_profile_clean")
-    #edge_options.add_argument("--disable-features=RendererCodeIntegrity")
+    #edge_options.add_argument(r'--user-data-dir=C:\\Users\\1765 IRON\\AppData\\Local\\Microsoft\\Edge\\User Data')
+    #edge_options.add_argument('--profile-directory=Profile 1')
+    edge_options.add_argument('--start-maximized')
+    edge_options.add_argument("--user-data-dir=C:/SEPLAN/edge_profile_clean")
+    edge_options.add_argument("--disable-features=RendererCodeIntegrity")
 
 
     return webdriver.Edge(options=edge_options)
@@ -31,7 +31,7 @@ def iniciar_driver():
 
 def main():
     driver = iniciar_driver()
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 120)
     driver.get("https://www.siop.planejamento.gov.br/modulo/main/index.html#/150")
 
     aguardar_login_manual(wait, driver)

@@ -35,7 +35,7 @@
 		<img id="identidade-govbr" src="assets/govbr/img/conta_govbr_v2.jpg" alt="Logomarca GovBR">
 	</aside>
 	<main id="main-signin">
-	<form method="post" id="loginData" action="https://sso.acesso.gov.br/login?client_id=siop.gov.br&amp;authorization_id=19703ff26b9" autocomplete="off" novalidate="">
+	<form method="post" id="loginData" action="https://sso.acesso.gov.br/login?client_id=siop.gov.br&amp;authorization_id=197040b7329" autocomplete="off" novalidate="">
 		<div class="card" id="login-cpf">
 			<h3>Identifique-se no gov.br com:</h3>
 			<div class="item-login-signup-ways" onclick="accordion('accordion-panel-id')">
@@ -260,14 +260,14 @@
 							</div>
 						</div>
 					</div>
-				<div class="item-login-signup-ways" onclick="showQrCode('ea258216-189a-41a0-a2a6-75e416911979');">
+				<div class="item-login-signup-ways" onclick="showQrCode('d0745766-262f-43f1-8d54-39c7a4a32cef');">
 						<a tabindex="5" href="#">
 						    <img src="assets/govbr/img/icons/qrcode.png">
 								Login com QR code
 					   		</a>
 					</div>
 				<div class="item-login-signup-ways" id="cert-digital">
-					<button id="login-certificate" type="submit" formaction="https://certificado.sso.acesso.gov.br/login?client_id=siop.gov.br&amp;authorization_id=19703ff26b9" name="operation" value="login-certificate" class="button-href-mimic2" tabindex="4">
+					<button id="login-certificate" type="submit" formaction="https://certificado.sso.acesso.gov.br/login?client_id=siop.gov.br&amp;authorization_id=197040b7329" name="operation" value="login-certificate" class="button-href-mimic2" tabindex="4">
 						<img src="assets/govbr/img/icons/CD.png">
 						Seu certificado digital
 					</button>
@@ -392,7 +392,7 @@
 			</div>
 		</div>
 			
-        <input type="hidden" name="_csrf" value="ea258216-189a-41a0-a2a6-75e416911979">
+        <input type="hidden" name="_csrf" value="d0745766-262f-43f1-8d54-39c7a4a32cef">
        	<input id="operation-field" type="hidden" name="operation" value="enter-account-id"> 
 		<input id="provider-id-field" type="hidden">
 		<input id="flow-token-field" type="hidden"> 
@@ -403,7 +403,7 @@
 				input.value = providerId;
 			}
 		</script>
-		<div id="hcaptcha"><iframe aria-hidden="true" data-hcaptcha-widget-id="0iep9ongygom" data-hcaptcha-response="" src="https://newassets.hcaptcha.com/captcha/v1/b6c212eccc6d3676f41433be7254abfb9c3991f4/static/hcaptcha.html#frame=checkbox-invisible" style="display: none;"></iframe><textarea id="h-captcha-response-0iep9ongygom" name="h-captcha-response" style="display: none;"></textarea></div>
+		<div id="hcaptcha"><iframe aria-hidden="true" data-hcaptcha-widget-id="03tobaxvhh4i" data-hcaptcha-response="" src="https://newassets.hcaptcha.com/captcha/v1/b6c212eccc6d3676f41433be7254abfb9c3991f4/static/hcaptcha.html#frame=checkbox-invisible" style="display: none;"></iframe><textarea id="h-captcha-response-03tobaxvhh4i" name="h-captcha-response" style="display: none;"></textarea></div>
 			<script>
 				function onLoadHcaptcha() {
 					console.log('hCaptcha is ready.');
@@ -482,7 +482,7 @@
 			<form id="formLoginQrCode" method="post" style="display: none">
         		<input type="hidden" name="operation" value="qrcode-login">
 				<input type="hidden" name="token">
-				<input type="hidden" name="_csrf" value="ea258216-189a-41a0-a2a6-75e416911979">
+				<input type="hidden" name="_csrf" value="d0745766-262f-43f1-8d54-39c7a4a32cef">
 			</form>
 		</div>
 	</div>
@@ -734,4 +734,4 @@ function stopQrCode() {
 
 startQrCode();
 </script>
-<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: 756px; top: 154.5px; z-index: 2147483647; position: absolute; pointer-events: auto; transition: opacity 0.15s ease-out; opacity: 1; visibility: visible; display: block;"><div style="position: relative; z-index: 1; width: 400px; height: 600px;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/b6c212eccc6d3676f41433be7254abfb9c3991f4/static/hcaptcha.html#frame=challenge&amp;id=0iep9ongygom&amp;host=sso.acesso.gov.br&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=off&amp;custom=false&amp;hl=pt&amp;tplinks=on&amp;andint=off&amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;sitekey=93b08d40-d46c-400a-ba07-6f91cda815b9&amp;size=invisible&amp;theme=light&amp;origin=https%3A%2F%2Fsso.acesso.gov.br" frameborder="0" scrolling="no" allow="private-state-token-issuance 'src'; private-state-token-redemption 'src'" title="Conteúdo principal do desafio hCaptcha" style="border: 0px; z-index: 2000000000; position: relative; width: 400px; height: 600px;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: auto; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05; cursor: pointer;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%; top: 10px;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1; display: none;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0; display: none;"></div></div></div></body></html>
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: 480.5px; top: 154.5px; z-index: 2147483647; position: absolute; pointer-events: auto; transition: opacity 0.15s ease-out; opacity: 1; visibility: visible; display: block;"><div style="position: relative; z-index: 1; width: 400px; height: 600px;"><iframe src="https://newassets.hcaptcha.com/captcha/v1/b6c212eccc6d3676f41433be7254abfb9c3991f4/static/hcaptcha.html#frame=challenge&amp;id=03tobaxvhh4i&amp;host=sso.acesso.gov.br&amp;sentry=true&amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;recaptchacompat=off&amp;custom=false&amp;hl=pt&amp;tplinks=on&amp;andint=off&amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;sitekey=93b08d40-d46c-400a-ba07-6f91cda815b9&amp;size=invisible&amp;theme=light&amp;origin=https%3A%2F%2Fsso.acesso.gov.br" frameborder="0" scrolling="no" allow="private-state-token-issuance 'src'; private-state-token-redemption 'src'" title="Conteúdo principal do desafio hCaptcha" style="border: 0px; z-index: 2000000000; position: relative; width: 400px; height: 600px;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: auto; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05; cursor: pointer;"></div><div style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%; top: 10px;"><div style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1; display: none;"></div><div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0; display: none;"></div></div></div></body></html>
