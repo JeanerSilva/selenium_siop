@@ -65,7 +65,7 @@ def _registrar_erro(driver, descricao, element_id):
     raise TimeoutException(f"Campo '{descricao}' com id='{element_id}' não encontrado.")
 
 
-def preenche_seletor_por_spath(driver, wait, descricao, xpath, texto_visivel, tentativas=2, delay=1):
+def preenche_seletor_por_xpath(driver, wait, descricao, xpath, texto_visivel, tentativas=2, delay=1):
     try:
         print(f"🕓 Aguardando campo '{descricao}'...")
         wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
@@ -89,21 +89,35 @@ def preenche_seletor_por_spath(driver, wait, descricao, xpath, texto_visivel, te
             f.write(driver.page_source)
         raise
 
-def aguardar_login_manual(wait, timeout=1200):
+def aguardar_login_manual(wait, driver, timeout=1200):
     try:
         print("🕵️ Verificando se é necessário login manual...")
+
+        # Verifica se o botão de login gov.br está presente
         botao_login = wait.until(
-            EC.presence_of_element_located((By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]')),
-            message="Botão de login gov.br não encontrado"
+            EC.presence_of_element_located(
+                (By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]')
+            )
         )
+
         if botao_login.is_displayed():
             print(f"🔒 Login não detectado. Aguardando até {timeout} segundos para que o usuário entre com gov.br...")
-            wait.until(
-                #EC.presence_of_element_located((By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]'))
-                EC.presence_of_element_located((By.XPATH, '//a[contains(@href, "#/meucadastro")]'))
-            )
-            print("✅ Login manual aparentemente concluído.")
+
+            # Espera até que o botão de login desapareça (indicando que o login foi feito)
+            inicio = time.time()
+            while time.time() - inicio < timeout:
+                try:
+                    driver.find_element(By.XPATH, '//button[contains(., "Entrar com") and contains(., "gov.br")]')
+                    time.sleep(2)  # aguarda antes de verificar novamente
+                except NoSuchElementException:
+                    print("✅ Botão de login desapareceu.")
+                    time.sleep(20)  # aguarda mais um pouco para garantir que o login foi concluído
+                    return
+
+ 
+            print("⚠️ Tempo limite para login manual atingido.")
+        else:
+            print("✅ Usuário já está logado (botão de login não visível).")
+
     except TimeoutException:
-        print("⚠️ Tempo limite para login manual atingido.")
-    except NoSuchElementException:
-        print("✅ Usuário já logado (botão de login não encontrado).")
+        print("✅ Login não parece necessário (botão não apareceu dentro do tempo esperado).")
