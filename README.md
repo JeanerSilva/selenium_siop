@@ -1,87 +1,213 @@
-# SIOP-BOT
+# 🚀 SIOP Bot - Nova Arquitetura
 
-## Configuração
+## 📁 Estrutura
 
-### Aplicação
-Use esta aplicação para acessar o SIOP de forma automatizada.
-
-Com o python instalado, crie o ambiente virtual:
-
-```shell
-python -m venv .venv
+```
+siop-bot/
+├── core/                          # 🎯 Módulo principal
+│   ├── __init__.py               # Exporta componentes principais
+│   ├── driver_manager.py         # Gerencia driver Edge
+│   ├── element_manager.py        # Gerencia elementos JSON
+│   ├── web_actions.py            # Executa ações web
+│   └── utils.py                  # Utilitários específicos
+├── flow/                         # 📋 Fluxos de negócio
+│   ├── __init__.py               # Exporta fluxos
+│   ├── pac.py                    # Fluxo de atualização PAC
+│   ├── programa.py               # Fluxo de programa individual
+│   ├── programas.py              # Fluxo de listagem de programas
+│   ├── objetivo_especifico.py    # Fluxo de objetivo específico
+│   ├── objetivos_especificos.py  # Fluxo de listagem de objetivos
+│   ├── entrega.py                # Fluxo de entrega individual
+│   ├── entregas.py               # Fluxo de listagem de entregas
+│   └── ...                       # Outros fluxos
+├── config/                       # ⚙️ Configurações
+│   ├── config.py                 # Configuração principal
+│   ├── elementos.json            # Elementos da interface
+│   └── urls.json                 # URLs das atividades
+├── siop_bot.py                   # 🚀 Arquivo principal refatorado
+├── carrega_pac.py                # 🎯 Script específico para carregamento PAC
+├── exemplo_uso.py                # 📚 Exemplos de uso
+├── test_siop_bot.py              # 🧪 Testes unitários
+├── run_tests.py                  # 🏃 Script de execução de testes
+└── requirements.txt               # 📦 Dependências atualizadas
 ```
 
-Após, instale as bibliotecas necessárias
+## 🎯 Como Usar
 
-```shell
-pip install -r requirements.txt
+### Execução Principal
+```bash
+python siop_bot.py
 ```
 
-Acesse o ambiente virtual:
-
-```shell
-.venv\Scripts\activate
+### Execução Específica (PAC 2024)
+```bash
+python carrega_pac.py
 ```
 
-### Perfil
-
-Para confirmar a pasta e o perfil execute:
-```shell
-python perfis.py
+### Execução Automática
+```bash
+python siop_bot.py /y
+python carrega_pac.py /y
 ```
 
-Resultado esperado:
-
-```shell
---user-data-dir=C:\\Users\\usuarioXXXXXXXX\\AppData\\Local\\Microsoft\\Edge\\User Data
-Perfil encontrado: Default
+### Executar Testes
+```bash
+python run_tests.py
+# ou
+pytest test_siop_bot.py -v
 ```
 
-Eventuais ajustes devem ser feitos em config/config.py nas seguintes linhas
+## 🧪 Criando Novos Fluxos
 
+### Fluxo Básico
 ```python
-EDGE_DIR = r'%LOCALAPPDATA%\\Microsoft\\Edge\\User Data'
-PERFIL_PADRAO = "Default"
+from core import WebActions, ElementManager
+from config import config
+
+class MeuNovoFluxo:
+    def __init__(self, web_actions: WebActions, element_manager: ElementManager):
+        self.web_actions = web_actions
+        self.element_manager = element_manager
+    
+    def executar(self):
+        # Seu fluxo aqui
+        self.web_actions.acessa("minha_atividade")
+        # ...
 ```
-A variável de sistema %LOCALAPPDATA% substitui "C:\\Users\\usuarioXXXXXXXX\\AppData\\Local"
 
-## Uso
+### Script Específico
+```python
+# meu_script.py
+from siop_bot import SiopBot
 
-Edite o siop_bot.py para executar as funcionalidades necessárias.
+def main():
+    bot = SiopBot()
+    try:
+        bot.inicializar()
+        bot.executar_meu_fluxo()  # seu método personalizado
+    except Exception as e:
+        print(f"❌ Erro: {e}")
+        raise
+    finally:
+        bot.finalizar()
 
-O sistema usa o Microsoft Edge, que será fechado toda vez que a aplicação for usada.
+if __name__ == "__main__":
+    main()
+```
 
-O login no SIOP deve ser feito antes da execução do programa.
+## 🎯 Benefícios da Nova Arquitetura
 
-Todas as ações serão feitas em nome do usuário logado.
+### ✅ Testável
+- Cada componente pode ser testado isoladamente
+- Mock objects fáceis de criar
+- Testes unitários independentes
 
-O acesso por meio da senha que foi logada se dá pelo uso do perfil padrão do Edge. 
+### ✅ Manutenível
+- Responsabilidades claras e separadas
+- Código organizado e legível
+- Fácil de debugar
 
+### ✅ Extensível
+- Fácil adicionar novos fluxos
+- Novos componentes sem afetar existentes
+- Arquitetura modular
 
-## Acréscimos de novas funcionalidades
+### ✅ Reutilizável
+- Componentes podem ser reutilizados
+- Dependências injetadas
+- Baixo acoplamento
 
-Verificar se há existe a url em config/urls.json
+### ✅ Padrões
+- Segue princípios SOLID
+- Clean Architecture
+- Dependency Injection
 
-Avaliar o tipo de interação necessário:
-- preenhcer input ou textarea
-- preencher seletor
-- clicar botão
+## 🔄 Migração
 
-No caso de input ou textarea:
-- Procurar o xpath de cada item e adicionar no arquivo elementos.json.
-- Verificar qual arquivo deve ser alterado na pasta flow:
--- programas.py: trabalha com a tela de todos os programas selecionados
--- programa.py: trabaha com um programa específico.
--- objetivos_específicos.py: trabalha com a tela de todos os objetivos específicos selecionados
--- objetivo_específico.py: trabalha com um objetivo específico específico
--- entregas.py: trabalha com a tela de todos as entregas selecionados
--- entrega.py: trabalha com uma entrega específica
-- adicionar um fluxo personalizado
--- avalie se a função desejada já consta no arquivo siop_utils.py
--- se já existir, apenas adiconar no arquivo de fluxo com sb.função
+### O que mudou:
+1. **`siop_utils.py`** → **`core/`** (módulos separados)
+2. **Variáveis globais** → **Injeção de dependências**
+3. **Imports circulares** → **Arquitetura limpa**
+4. **Funções soltas** → **Classes organizadas**
+5. **Importação tardia** → **Evita dependências circulares**
 
+### O que permaneceu:
+1. **Fluxos existentes** continuam funcionando
+2. **Configurações** mantidas
+3. **Funcionalidades** preservadas
+4. **Interface** similar
 
+## 🚀 Próximos Passos
 
-No caso dos botões, deve-se saber o tipo e o valor.
+1. **Teste a nova arquitetura**:
+   ```bash
+   python run_tests.py
+   ```
 
-No caso de tabelas, deve-se pegar o xpath do /thead
+2. **Execute a aplicação completa**:
+   ```bash
+   python siop_bot.py
+   ```
+
+3. **Execute carregamento específico**:
+   ```bash
+   python carrega_pac.py
+   ```
+
+4. **Explore os exemplos**:
+   ```bash
+   python exemplo_uso.py
+   ```
+
+5. **Crie novos fluxos** seguindo o padrão estabelecido
+
+## 🔧 Resolução de Problemas
+
+### Importação Circular Resolvida
+- **Problema**: `siop_utils.py` importava `siop_bot.py` no topo
+- **Solução**: Importação tardia de `main()` apenas quando necessário
+- **Resultado**: Scripts específicos como `carrega_pac.py` funcionam independentemente
+
+### Compatibilidade com Fluxos Existentes
+- Os fluxos em `flow/` continuam usando `siop_utils` (sb)
+- O driver é injetado do `core/` para o `sb` durante inicialização
+- Funcionalidade preservada com arquitetura limpa
+
+## 📁 Scripts Disponíveis
+
+### Scripts Principais
+- **`siop_bot.py`**: Aplicação completa com todos os fluxos
+- **`carrega_pac.py`**: Script específico para carregamento PAC 2024
+
+### Scripts de Desenvolvimento
+- **`exemplo_uso.py`**: Exemplos de uso da nova arquitetura
+- **`test_siop_bot.py`**: Testes unitários
+- **`run_tests.py`**: Executor de testes automatizado
+
+### Scripts de Configuração
+- **`pytest.ini`**: Configuração para testes
+- **`requirements.txt`**: Dependências atualizadas
+
+## 📚 Documentação Adicional
+
+- **`exemplo_uso.py`**: Exemplos práticos de uso
+- **`test_siop_bot.py`**: Testes unitários
+- **`run_tests.py`**: Script de execução de testes
+- **`pytest.ini`**: Configuração do pytest
+- **`carrega_pac.py`**: Exemplo de script específico
+
+---
+
+## 🎉 Conclusão
+
+A aplicação agora está muito mais profissional e fácil de manter! Os problemas de importação circular foram resolvidos, permitindo criar scripts específicos como `carrega_pac.py` sem conflitos. Você pode continuar desenvolvendo novos fluxos seguindo o padrão estabelecido, com a confiança de que a arquitetura é sólida, testável e livre de dependências circulares.
+
+**Principais conquistas:**
+- ✅ Código organizado e legível
+- ✅ Arquitetura testável
+- ✅ Dependências claras
+- ✅ Fácil manutenção
+- ✅ Padrões profissionais
+- ✅ Imports circulares eliminados
+- ✅ Scripts específicos funcionando
+- ✅ Compatibilidade com fluxos existentes

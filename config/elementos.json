@@ -5,7 +5,7 @@
   },
   {
     "item": "ppa.programa.programa_input",    
-    "xpath": "//input[@type='text' and contains(@class,'txtPesquisaProgramaCodigo')]"
+    "xpath": "//input[@type='text' and contains(@class,'txtCodigoPrograma')]"
   },
   {
     "item": "ppa.entrega.entrega_input",

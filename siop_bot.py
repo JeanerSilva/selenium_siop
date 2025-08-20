@@ -47,7 +47,7 @@ class SiopBot:
         print("📋 Executando fluxos de exemplo...")
         
         # Exemplo de programa
-        # flow.programa("1144").acessa().lista()
+        flow.programa("1144").acessa().lista()
         
         # Exemplo de programas
         # flow.programas().acessa().seleciona_nao_excluido().lista()

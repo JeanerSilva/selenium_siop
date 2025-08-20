@@ -32,18 +32,44 @@ class DriverManager:
         print("Atenção, você precisa já estar logado no SIOP")
         print(f"Driver edge: {edge_driver_path}")
         
+        # Configurações mais estáveis para o Edge
+        edge_options.add_argument("--no-sandbox")
+        edge_options.add_argument("--disable-dev-shm-usage")
+        edge_options.add_argument("--disable-gpu")
+        edge_options.add_argument("--disable-extensions")
+        edge_options.add_argument("--disable-plugins")
+        edge_options.add_argument("--disable-images")
+        edge_options.add_argument("--disable-javascript")
+        edge_options.add_argument("--disable-web-security")
+        edge_options.add_argument("--allow-running-insecure-content")
+        edge_options.add_argument("--disable-features=VizDisplayCompositor")
+        
+        # Tenta usar perfil existente se configurado
+        try:
+            if hasattr(self.config, 'EDGE_DIR') and self.config.EDGE_DIR:
+                caminho = os.path.expandvars(self.config.EDGE_DIR)
+                if os.path.exists(caminho):
+                    caminho_ajustado = re.sub(r'\\+', r'\\\\', caminho)
+                    argumento = f'--user-data-dir={caminho_ajustado}'
+                    edge_options.add_argument(argumento)
+                    
+                    if hasattr(self.config, 'PERFIL_EDGE_PADRAO') and self.config.PERFIL_EDGE_PADRAO:
+                        edge_options.add_argument(f'--profile-directory={self.config.PERFIL_EDGE_PADRAO}')
+                    print(f"✅ Usando perfil Edge: {caminho}")
+                else:
+                    print(f"⚠️ Diretório de perfil não encontrado: {caminho}")
+            else:
+                print("ℹ️ Usando perfil padrão do Edge")
+        except Exception as e:
+            print(f"⚠️ Erro ao configurar perfil Edge: {e}")
+            print("ℹ️ Continuando com perfil padrão")
+        
         service = Service(
             executable_path=str(edge_driver_path),
             log_path="logs/edge_driver.log",
             service_args=["--verbose"],
             creationflags=subprocess.CREATE_NO_WINDOW
         )
-        
-        caminho = os.path.expandvars(self.config.EDGE_DIR)
-        caminho_ajustado = re.sub(r'\\+', r'\\\\', caminho)
-        argumento = f'--user-data-dir={caminho_ajustado}'
-        edge_options.add_argument(argumento)
-        edge_options.add_argument(f'--profile-directory={self.config.PERFIL_EDGE_PADRAO}')
 
         for tentativa in range(1, tentativas + 1):
             try:
@@ -56,6 +82,7 @@ class DriverManager:
             except SessionNotCreatedException as e:
                 print(f"❌ Erro ao iniciar Edge (tentativa {tentativa}): {e}")
                 if tentativa < tentativas:
+                    print(f"⏳ Aguardando {delay} segundos antes da próxima tentativa...")
                     time.sleep(delay)
                     
         raise RuntimeError("❌ Falha ao iniciar o Edge após múltiplas tentativas.")

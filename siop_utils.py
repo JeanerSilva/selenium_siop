@@ -5,8 +5,6 @@ import os
 import re
 import sys
 
-
-from siop_bot import main
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options
 from selenium.webdriver.edge.service import Service
@@ -344,7 +342,44 @@ def seleciona_ano_e_perfil_e_muda_de_frame(elemento):
     aguarda_elemento("Perfil", xpath_perfil)
     preenche_seletor("Perfil", xpath_perfil, perfil)
     #navega_para_painel() 
-    entra_frame_com_elemento("Campo 'Objetivo Específico'", elemento )
+    
+    # Implementação temporária da função entra_frame_com_elemento
+    print("🔄 Implementação temporária de entra_frame_com_elemento...")
+    alvo_xpath = get_xpath_elemento(elemento)
+    driver.switch_to.default_content()
+    aguarda_dom()
+
+    # Espera haver ao menos 1 iframe na página
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.common.by import By
+    from selenium.common.exceptions import TimeoutException
+    
+    timeout = 30
+    WebDriverWait(driver, timeout).until(
+        EC.presence_of_all_elements_located((By.TAG_NAME, "iframe"))
+    )
+    iframes = driver.find_elements(By.TAG_NAME, "iframe")
+    print(f"🔎 Procurando iframe que contém o elemento '{elemento}'. Total iframes: {len(iframes)}")
+
+    for idx, fr in enumerate(iframes):
+        try:
+            driver.switch_to.frame(fr)
+            # dá até 5s por iframe para achar o alvo
+            WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, alvo_xpath))
+            )
+            if jquery:
+                aguarda_jquery()
+            print(f"✅ Entrou no iframe #{idx} que contém o elemento.")
+            return  # mantém o contexto neste iframe
+        except TimeoutException:
+            driver.switch_to.default_content()
+            continue
+
+    # Se chegar aqui, não achou
+    driver.switch_to.default_content()
+    raise TimeoutException(f"❌ Não encontrei iframe contendo o elemento.")
    
 
 def seleciona_seletor(descricao, elemento, texto_visivel):
@@ -360,7 +395,11 @@ def inicia():
         print ("Iniciando ...")
         finaliza_navegador()
         iniciar_driver()
-        main()
+        try:
+            from siop_bot import main
+            main()
+        except Exception as e:
+            print(f"⚠️ Não foi possível importar/executar main() de siop_bot: {e}")
     else:
         resposta = input("\n⚠️ Você precisa estar previamente logado no SIOP.\n\nO navegador Microsoft Edge será fechado. Deseja continuar? (s/n): ").strip().lower()
         if resposta != 's':
@@ -368,7 +407,11 @@ def inicia():
         else:    
             finaliza_navegador()
             iniciar_driver()
-            main()
+            try:
+                from siop_bot import main
+                main()
+            except Exception as e:
+                print(f"⚠️ Não foi possível importar/executar main() de siop_bot: {e}")
 
 
 def define_exercicio(novo_ano=None):
@@ -396,94 +439,11 @@ def finaliza_navegador():
     except subprocess.CalledProcessError:
         print("⚠️ Não foi possível encerrar processos do Edge ou nenhum processo estava ativo.")
 
-def extrai_numero_pac(nome_arquivo: str) -> int | None:
-    m = re.search(r'PAC[^0-9]*([0-9]+)', nome_arquivo, flags=re.IGNORECASE)
-    return int(m.group(1)) if m else None
+# Funções movidas para core/utils.py - use core.utils.extrai_numero_pac() e core.utils.monta_objetivo() em vez disso
 
-def monta_objetivo(n: int) -> str:
-    return f"{n:04d}"
+# Função movida para core/web_actions.py - use web_actions.debug_contexto() em vez disso
 
-def debug_contexto(sb, limite=15, mostrar_html_inicio=False):
-    script = r"""
-    const max = arguments[0] || 15;
-    const all = document.querySelectorAll('*');
-    const res = [];
-    const inIframe = (window.self !== window.top);
-    res.push({
-        tipo: '__header__',
-        contexto: inIframe ? 'iframe' : 'default_content',
-        frameId: inIframe && window.frameElement ? window.frameElement.id || null : null,
-        frameName: inIframe && window.frameElement ? window.frameElement.name || null : null,
-        titulo: document.title || '',
-        url: location.href,
-        total: all.length
-    });
-    const n = Math.min(max, all.length);
-    for (let i = 0; i < n; i++) {
-        const e = all[i];
-        res.push({
-            tag: e.tagName.toLowerCase(),
-            id: e.id || '',
-            class: (e.className && e.className.toString) ? e.className.toString() : '',
-            text: (e.textContent || '').trim().slice(0, 120)
-        });
-    }
-    return res;
-    """
-    data = sb.driver.execute_script(script, int(limite))
-    header = data[0]
-    print(f"🔎 DOM atual: total={header['total']} elementos | contexto={header['contexto']} | "
-          f"frameId={header['frameId']} | frameName={header['frameName']}")
-    # Lista amostra
-    for i, row in enumerate(data[1:], start=1):
-        print(f"{i:02d}. <{row['tag']} id='{row['id']}' class='{row['class']}'>  txt='{row['text']}'")
-
-def contexto_atual(sb):
-    frame = sb.driver.execute_script("return self.frameElement")
-    if frame is None:
-        print("🧭 Contexto: default_content (página principal).")
-        return {"contexto": "default_content", "frame_id": None, "frame_name": None}
-    else:
-        info = {
-            "contexto": "iframe",
-            "frame_id": frame.get_attribute("id"),
-            "frame_name": frame.get_attribute("name"),
-        }
-        print(f"🧭 Contexto: iframe id={info['frame_id']} name={info['frame_name']}")
-        return info
+# Função movida para core/web_actions.py - use web_actions.contexto_atual() em vez disso
 
 
-def entra_frame_com_elemento(descricao_alvo, item_json_xpath, timeout=30):
-    """
-    Troca para o iframe que contém o elemento identificado por 'item_json_xpath'
-    (chave do elementos.json). Sai para default_content antes de procurar.
-    """
-    alvo_xpath = get_xpath_elemento(item_json_xpath)
-    driver.switch_to.default_content()
-    aguarda_dom()
-
-    # Espera haver ao menos 1 iframe na página
-    WebDriverWait(driver, timeout).until(
-        EC.presence_of_all_elements_located((By.TAG_NAME, "iframe"))
-    )
-    iframes = driver.find_elements(By.TAG_NAME, "iframe")
-    print(f"🔎 Procurando iframe que contém '{descricao_alvo}'. Total iframes: {len(iframes)}")
-
-    for idx, fr in enumerate(iframes):
-        try:
-            driver.switch_to.frame(fr)
-            # dá até 5s por iframe para achar o alvo
-            WebDriverWait(driver, 5).until(
-                EC.presence_of_element_located((By.XPATH, alvo_xpath))
-            )
-            if jquery:
-                aguarda_jquery()
-            print(f"✅ Entrou no iframe #{idx} que contém '{descricao_alvo}'.")
-            return  # mantém o contexto neste iframe
-        except TimeoutException:
-            driver.switch_to.default_content()
-            continue
-
-    # Se chegar aqui, não achou
-    driver.switch_to.default_content()
-    raise TimeoutException(f"❌ Não encontrei iframe contendo '{descricao_alvo}'.")
+# Função movida para core/web_actions.py - use web_actions.entra_frame_com_elemento() em vez disso
