@@ -54,7 +54,7 @@ class pac_lote:
                     arquivo,
                     objetivo,
                     self.exercicio,
-                )
+                ) 
 
             print(f"✅ OE {objetivo} atualizado com sucesso.")
 
