@@ -52,15 +52,18 @@ class objetivo_especifico:
         return self
     
     def apaga_arquivo_pac(self):
-        print("Apaga arquivo")
+        print("🗑️ Tentando apagar arquivo PAC existente...")
         retorno = sb.clica_link_opcional("Apaga arquivo", "objetivo-especifico.novopac.botao_excluir")
-        print("Retorno {retorno}")
-        if retorno: 
+        print(f"🔎 Resultado do clique no botão apagar: {bool(retorno)}")
+        if retorno:
             sb.espera(1)
             sb.clica_botao_tipo("Confirmar", "submit")
             sb.espera(1)
             sb.clica_link_por_texto_inicial("Salvar")
             sb.espera(1)
+            print("✅ Arquivo PAC anterior apagado e salvo.")
+        else:
+            print("ℹ️ Nenhum arquivo PAC anterior encontrado para apagar.")
         return self
         
 
