@@ -42,7 +42,7 @@ class SiopBot:
         
     
         
-    def executar_fluxos_exemplo(self):
+    def executar_abre_programa(self):
         """Executa fluxos de exemplo comentados no código original"""
         print("📋 Executando fluxos de exemplo...")
         

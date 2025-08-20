@@ -6,7 +6,7 @@ def main():
     bot = SiopBot()
     try:
         bot.inicializar()
-        bot.executar_fluxos_exemplo()
+        bot.executar_abre_programa()
     except Exception as e:
         print(f"❌ Erro durante execução: {e}")
         raise
