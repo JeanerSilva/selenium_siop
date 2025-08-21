@@ -151,7 +151,7 @@ if __name__ == "__main__":
 
 3. **Execute carregamento específico**:
    ```bash
-   python carrega_pac.py
+   python executa_carrega_pac.py
    ```
 
 4. **Explore os exemplos**:
