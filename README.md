@@ -322,14 +322,55 @@ if __name__ == '__main__':
 
 ## 🚨 **Troubleshooting Comum**
 
-### **1. Edge não inicia**
+### **🚨 CONFLITO POWERBI (IMPORTANTE!)**
+
+**O PowerBI pode causar falhas no Edge WebDriver!**
+
+**Por que acontece:**
+- PowerBI usa componentes do Edge WebView2 internamente
+- Ambos tentam usar as mesmas portas de debug
+- Causa erro `DevToolsActivePort file doesn't exist`
+
+**Como resolver:**
+1. **Feche o PowerBI** antes de executar o bot
+2. **Execute o diagnóstico automático:**
+   ```bash
+   python diagnostico_powerbi.py /auto
+   ```
+3. **Ou diagnóstico interativo:**
+   ```bash
+   python diagnostico_powerbi.py
+   ```
+
+**Sintomas do conflito:**
+- Edge não inicia
+- Erro `DevToolsActivePort file doesn't exist`
+- Bot falha na inicialização
+- Múltiplas tentativas sem sucesso
+
+**Prevenção:**
+- Sempre feche PowerBI antes de executar o bot
+- Use o script de diagnóstico regularmente
+- Mantenha apenas um aplicativo Edge rodando por vez
+
+### **1. Edge não inicia (Conflito PowerBI)**
 ```
 ❌ Erro: DevToolsActivePort file doesn't exist
 ```
-**Solução:**
-- Feche todas as instâncias do Edge
-- Verifique se `msedgedriver.exe` é da mesma versão do Edge
-- Confirme caminhos em `config/config.py`
+**Causa Principal:** PowerBI em execução
+- O PowerBI usa componentes do Edge WebView2
+- Ambos tentam usar as mesmas portas de debug
+- Causa conflito com o Selenium WebDriver
+
+**Soluções:**
+1. **Feche o PowerBI** antes de executar o bot
+2. **Use o script de diagnóstico:**
+   ```bash
+   python diagnostico_powerbi.py /auto
+   ```
+3. **Feche todas as instâncias do Edge**
+4. Verifique se `msedgedriver.exe` é da mesma versão do Edge
+5. Confirme caminhos em `config/config.py`
 
 ### **2. Elemento não encontrado**
 ```

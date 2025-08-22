@@ -24,6 +24,35 @@ class DriverManager:
         self.actions = None
         self.jquery = config.JQUERY
         
+    def _verificar_conflitos_powerbi(self):
+        """Verifica e resolve conflitos com PowerBI que podem afetar o Edge"""
+        try:
+            import subprocess
+            result = subprocess.run([
+                "powershell", "-Command", 
+                "Get-Process | Where-Object {$_.ProcessName -like '*powerbi*' -or $_.ProcessName -like '*PBIDesktop*'} | Select-Object ProcessName, Id"
+            ], capture_output=True, text=True, shell=True)
+            
+            if "PowerBI" in result.stdout or "PBIDesktop" in result.stdout:
+                print("⚠️  ATENÇÃO: PowerBI detectado em execução!")
+                print("💡 O PowerBI pode causar conflitos com o Edge WebDriver")
+                print("   Recomendado: Feche o PowerBI antes de executar o bot")
+                
+                resposta = input("Deseja tentar fechar o PowerBI automaticamente? (s/n): ").strip().lower()
+                if resposta in ['s', 'sim', 'y', 'yes']:
+                    print("🔄 Tentando fechar PowerBI...")
+                    subprocess.run([
+                        "powershell", "-Command",
+                        "Stop-Process -Name '*powerbi*' -Force -ErrorAction SilentlyContinue; Stop-Process -Name '*PBIDesktop*' -Force -ErrorAction SilentlyContinue"
+                    ], shell=True)
+                    print("✅ PowerBI fechado. Aguardando 3 segundos...")
+                    time.sleep(3)
+                else:
+                    print("ℹ️ Continuando sem fechar PowerBI...")
+                    
+        except Exception as e:
+            print(f"⚠️ Não foi possível verificar conflitos com PowerBI: {e}")
+    
     def iniciar_driver(self, tentativas=3, delay=5):
         """Inicia o driver Edge com configurações específicas"""
         edge_options = Options()
@@ -32,7 +61,10 @@ class DriverManager:
         print("Atenção, você precisa já estar logado no SIOP")
         print(f"Driver edge: {edge_driver_path}")
         
-        # Configurações mais estáveis para o Edge
+        # Verifica conflitos com PowerBI antes de iniciar
+        self._verificar_conflitos_powerbi()
+        
+        # Configurações específicas para Windows - resolve DevToolsActivePort
         edge_options.add_argument("--no-sandbox")
         edge_options.add_argument("--disable-dev-shm-usage")
         edge_options.add_argument("--disable-gpu")
@@ -43,6 +75,35 @@ class DriverManager:
         edge_options.add_argument("--disable-web-security")
         edge_options.add_argument("--allow-running-insecure-content")
         edge_options.add_argument("--disable-features=VizDisplayCompositor")
+        
+        # Opções específicas para resolver DevToolsActivePort no Windows
+        edge_options.add_argument("--remote-debugging-port=0")  # Porta aleatória
+        
+        # Opções específicas para evitar conflitos com PowerBI/WebView2
+        edge_options.add_argument("--disable-web-security")
+        edge_options.add_argument("--disable-features=VizDisplayCompositor")
+        edge_options.add_argument("--disable-software-rasterizer")
+        edge_options.add_argument("--disable-threaded-animation")
+        edge_options.add_argument("--disable-threaded-scrolling")
+        edge_options.add_argument("--disable-checker-imaging")
+        edge_options.add_argument("--disable-new-content-rendering-timeout")
+        edge_options.add_argument("--disable-hang-monitor")
+        edge_options.add_argument("--disable-prompt-on-repost")
+        edge_options.add_argument("--disable-client-side-phishing-detection")
+        edge_options.add_argument("--disable-component-update")
+        edge_options.add_argument("--disable-domain-reliability")
+        edge_options.add_argument("--disable-features=NetworkService,NetworkServiceLogging")
+        edge_options.add_argument("--disable-background-timer-throttling")
+        edge_options.add_argument("--disable-backgrounding-occluded-windows")
+        edge_options.add_argument("--disable-renderer-backgrounding")
+        edge_options.add_argument("--disable-features=TranslateUI")
+        edge_options.add_argument("--disable-ipc-flooding-protection")
+        edge_options.add_argument("--no-first-run")
+        edge_options.add_argument("--no-default-browser-check")
+        edge_options.add_argument("--disable-background-networking")
+        edge_options.add_argument("--disable-component-extensions-with-background-pages")
+        edge_options.add_argument("--metrics-recording-only")
+        edge_options.add_argument("--no-report-upload")
         
         # Tenta usar perfil existente se configurado
         try:
@@ -74,13 +135,27 @@ class DriverManager:
         for tentativa in range(1, tentativas + 1):
             try:
                 print(f"🚀 Tentativa {tentativa} de iniciar o Edge...")
+                
+                # Verifica se o driver existe
+                if not os.path.exists(edge_driver_path):
+                    raise FileNotFoundError(f"Driver não encontrado: {edge_driver_path}")
+                
                 self.driver = webdriver.Edge(service=service, options=edge_options)
                 self.wait = WebDriverWait(self.driver, 120)
                 self.actions = ActionChains(self.driver)
                 print("✅ Edge iniciado com sucesso.")
                 return self.driver, self.wait
+                
             except SessionNotCreatedException as e:
                 print(f"❌ Erro ao iniciar Edge (tentativa {tentativa}): {e}")
+                
+                # Dicas específicas para Windows
+                if "DevToolsActivePort" in str(e):
+                    print("💡 Dica: Este erro é comum no Windows. Tente:")
+                    print("   1. Fechar todas as instâncias do Edge")
+                    print("   2. Verificar se a versão do msedgedriver.exe é compatível")
+                    print("   3. Executar como administrador se necessário")
+                
                 if tentativa < tentativas:
                     print(f"⏳ Aguardando {delay} segundos antes da próxima tentativa...")
                     time.sleep(delay)
